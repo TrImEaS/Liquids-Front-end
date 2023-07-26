@@ -1,0 +1,218 @@
+Programa liquidacion de sueldos(Liquid's):
+	
+	Funcion de programa: 
+
+	excelEmpleados --> programa -->  excelAImprimir
+	
+	El programa tomaria ya los datos de los empleados de varios excel (un excel por empleado) los cuales ya tendrian los datos de los empleados necesarios y dejaria otros excel's armados para directamente imprimir los recibos de cada empleado de cada mes en una carpeta.
+
+	Comentarios: Si optamos por un excel por empleado podria hacer un programa para que desde excelEmpleados (existente) tome todos los datos de cada uno y los separe en diferentes .txt o .xlsx (o simplemente pasarlos a mano) asi dependiendo el legajo se tomen los datos mas rapido de cada empleado, este todo mas ordenado, y para que el programa sea mas eficaz y rapido.
+	Cada excel asignado a cada empleado podria contener el legajo y el cuil, asi se podria generar la busqueda mensionada mas abajo.
+
+	Diseño: Podria ser igual a la hoja del recibo, asi es mas facil que el usuario se guie y comprenda el programa.
+
+	Variables/Constantes {
+
+		-companyData: Un simple selector que de como opciones las diferentes empresas
+
+		-employeeData:Ingresando el Legajo o el Cuil, se tomaran automaticamente los valores de todas las variables {
+			-Legajo
+			-Cuil
+			-Sector
+			-Tarea
+			-Fecha ingreso
+			-NombreApellido
+			-Fecha deposito
+			-Periodo
+			-Categoria
+			-nombreBanco			
+			-RemuBasica
+			-TareaAsignada
+		}
+
+		/Ingresado por el usuario/{
+			-NroRecibo
+			-LugarFecha de pago
+			-Unidades
+			-Valor unitario
+			-Descripcion			
+			-HaberesRemunerativos/ noRemunerativos
+			-Descuentos
+			-Aumentos: Si hay entonces:
+				-Remunerativo: el usuario ingresa el porcentaje y se actualiza el monto a sumar
+				-No remunerativo: Mismo que el otro
+			-Antiguedad: Usuario ingresa antiguedad
+		}
+		
+
+		-Periodo abonado: Podria ser un simple selector el cual le de a elegir el mes
+
+		-Subtotal: Calcula el subtotal
+
+		-TotalNeto: Calcula el total neto
+
+		-TotalAEscrito: Convierte los numeros de totalNeto a letras
+	}
+
+	Header codigo 
+
+					/*Header Mid A*/
+
+/* 				
+				.dataMidA input{
+					height: 10px;
+					width: 200px;
+				}
+				
+				.nombreApellido input{
+					width: 300px;
+				}
+
+				.dataMidA li {
+					align-items: center;
+				} */
+
+				
+
+				/*Header Mid B*/
+				/* .dataMidB {
+					display: flex;
+					background-color: red;
+					flex-direction: row;
+					flex-wrap: wrap;
+					height: 100px;
+				}
+					.dataMidB li:nth-child(1){
+						width: 225px;
+					}
+					.dataMidB li:nth-child(4){
+						width: 225px;
+					} */
+
+		/*Header Bottom*/
+		/* .dataBottom {
+			height: 100px;
+			width: 100%;
+			background-color: black;
+		} */
+192.168.2.151
+
+
+
+//////////////////////////////////////////////////
+	<div class="printContainerTwo hidden">	
+		<!-- <header class="header"> -->
+			<form class="formContainer form">
+				<!-- Top Header -->
+				<div class="topHeader"> 
+					<div class="dataTopL"></div>
+					<ul class="dataTopR">
+						<li class="cuil">
+							<label for="cuil">CUIL</label>
+							<input type="text" name="cuil" min="0" max="1000000000000000"  placeholder="Ej: 10-45518784-4" required></li>
+						<li class="numRecibo">
+							<label for="numRecibo">Recibo N°</label>
+							<input type="text" name="numRecibo" min="0" placeholder="Ej: 10"></li>
+					</ul>
+				</div>
+
+				<!-- Mid Header -->
+
+				<div class="midHeader">
+					<ul class="dataMidA">
+						<li class="nombreApellido"> 
+							<label for="nombreApellido">Nombre y Apellido</label>
+							<input type="text" name="nombreApellido" placeholder="Ej: Pepito Thompson"></li>
+							
+						<li class="sector">
+							<label for="sector">Sector</label>
+							<input type="text" name="sector" placeholder="Ej: Sistemas"></li>
+
+						<li class="legajo">
+							<label for="legajo">Legajo</label>
+							<input type="text" name="legajo" placeholder="Ej: 11"></li>
+
+						<li class="categoria">
+							<label for="categoria">Categoria</label>
+							<input type="text" name="categoria" placeholder="Ej: A"></li>
+
+					</ul>
+
+					<ul class="dataMidB">
+						<li class="nombreBanco">
+							<label for="nombreBanco">Banco Deposito</label>
+							<input type="text" name="nombreBanco" placeholder="Ej: Galicia"></li>
+
+						<li class="periodo">
+							<label for="periodo">Periodo</label>
+							<input type="text" name="periodo" placeholder="Ej: sas"></li>
+
+						<li class="fechaDeposito">								
+							<label for="fechaDeposito">Fecga Deposito</label>
+							<input type="text" name="fechaDeposito" placeholder="Ej: 16/06/23"></li>
+
+						<li class="tareaAsignada">
+							<label for="tareaAsignada">Tarea Desempeñada</label>
+							<input type="text" name="tareaAsignada" placeholder="Ej: Sistemas"></li>
+
+						<li class="fechaIngreso">
+							<label for="fechaIngreso">Fecha Ingreso</label>							
+							<input type="text" name="fechaIngreso" placeholder="Ej: 12/06/23" ></li>
+
+						<li class="remuBasica">
+							<label for="remuBasica">Rem. Basica</label>
+							<input type="text" name="remuBasica" placeholder="Ej: 100000"></li>
+					</ul>
+				</div>
+
+				<!-- Bottom Header -->
+					<ul class="dataBottom">
+						<li class="periodoAbonado">
+							<label for="periodoAbonado">Periodo<br>Abonado</label>
+							<input type="text" name="periodoAbonado" placeholder="Ej: Julio del 2023"></li>
+							
+						<li class="lugarFechaPago">
+							<label for="lugarFechaPago">Lugar y Fecha<br>de Pago</label>
+							<input type="text" name="lugarFechaPago" placeholder="Ej: Ciudad Autonoma De Buenos Aires, 15/12/23"></li>
+					</ul>
+			
+				<section class="sectionContainer">
+					
+					<div class="descripcion"><p>Descripcion de Conceptos</p></div>
+
+					<div class="unidades"><p>Unidades</p></div>
+
+					<div class="valorUni"><p>Valor<br>Unitario</p></div>
+
+					<div class="habRemu"><p>Haberes<br>Remunerativos</p></div>
+
+					<div class="habNoRemu"><p>Haberes No<br>Remunerativos</p></div>
+
+					<div class="descuentos"><p>Descuentos</p></div>
+
+				</section>
+			</form>		
+
+		<footer class="footerContainer">
+			<div class="firmaEmpleado"><p></p></div>
+			<div class="footerR">
+				<div class="subTotalContainer"> 
+					<label for="text">SubTotal</label>
+					<input type="text" name="totalHR"> 
+					<input type="text" name="totalHNR">
+					<input type="text" name="totalD">
+				</div>
+				<div class="totalNeto printNeto"> 
+					<label for="totalNeto">Total Neto</label>
+					<input type="text" name="totalNeto">
+				</div>
+				<div class="totalAString">
+					<label for="totalAString">Son:</label>
+					<input type="text" name="totalAString">
+				</div>
+			</div>
+		</footer>
+	</div>
+////////////////////////////////////////////////
+
+-Al momento de tocar el boton, que lo guarde en un archivo .txt

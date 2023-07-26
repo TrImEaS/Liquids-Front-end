@@ -1,0 +1,407 @@
+/*----------Contenedor de todo----------*/
+
+.printContainer {
+	display: flex;
+	flex-direction: row;
+	width: 1500px;
+	background-color: #fff;
+	padding: 0px;
+	justify-content: space-between;
+	min-height: 1000px;
+}
+
+.container {
+	display: flex;
+	width: 720px;
+	min-height: 1050px;
+	flex-direction: column;
+	padding-bottom: 10px ;
+}
+
+.container p {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	align-items: center;
+	justify-content: start;
+	background-color: #fff;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.container input {
+	border: none;
+}
+
+.space {
+	height: 1000px;
+	width: 90px;
+}
+
+
+/* -------------PrintTopHeader----------------- */
+
+
+.newTopHeader {
+	display: flex;
+	flex-direction: row;
+	height: 90px;
+	width: 100%;
+	margin-bottom: 0px;
+	align-items: center;
+
+}
+
+.newDataTopL {
+	display: flex;
+	flex-direction: row;
+	width: 60%;
+	align-items: center;
+
+}
+
+.newCompanyLogo {
+	width: 50%;
+	height: 40px;
+	background-image: url(Logo1.png);
+	background-size: 99% 95%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.newCompanyData {
+	display: flex;
+	height: 90px;
+	width: 50%;
+	padding-left: 5px;
+}
+
+.newCompanyData span {
+	font-size: 14px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+}
+
+
+.newDataTopR {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	width: 40%;
+	height: 100px;
+	padding: 5px;
+	list-style: none;
+	border-top-right-radius: 10px;
+}
+
+.newCuil,
+.newNumRecibo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1px;
+}
+
+.newNumRecibo label,
+.newCuil label {
+	width: 10px;
+	height: 20px;
+}
+
+.newNumRecibo p,
+.newCuil p {
+	margin-bottom: 2px;
+	border-radius: 5px;
+	height: 40px;
+	width: 90%;
+	margin-left: 20px;
+	padding-left: 40px;
+	text-align: center;
+}
+
+
+
+
+/*---------------PrintHeaderMid---------------*/
+
+.newMidHeader {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-grow: .1;
+	margin-top: 10px;
+}
+
+.newMidHeader p {
+	min-height: 60px;
+	padding-left: 30px;
+}
+
+/* <!---------------- MidHeaderA ----------------> */
+
+.newDataMidA {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	flex-grow: 1;
+}
+
+
+.newDataMidA li {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 20%;
+}
+
+.newDataMidA p {
+	width: 100%;
+	height: 100%;
+	text-align: start;
+}
+
+.newDataMidA li:first-child {
+	width: 45%;
+}
+.newLegajo {
+	margin-left: 75px;
+}
+
+/* <!---------------- MidHeaderB ----------------> */
+
+
+.newDataMidB {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	width: 100%;
+	flex-grow: 1;
+
+}
+
+.newDataMidB li{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+
+}
+
+.newDataMidB li p {
+	height: 100%;
+	width: 100%;
+	justify-content: start;
+}
+.newDataMidB li {
+	width: 20%;
+}
+
+.newDataMidB li:first-child,
+.newDataMidB li:nth-child(4) {
+	width: 20%;
+}
+
+
+
+/* <!---------------- BottomHeader ----------------> */
+
+.newDataBottom {
+	display: flex;
+	flex-direction: row;
+	flex-grow: .2;
+	margin-top: 10px;
+	
+}
+
+.newDataBottom li,
+.newDataBottom li p {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.newDataBottom li:first-child,
+.newDataBottom li p:first-child {
+	width: 50%;
+}
+
+.newDataBottom li {
+	margin-left: 60px;
+}
+
+.newLugarFechaPago {
+	padding-left: 50px;
+}
+
+
+/*----------Section container----------*/
+
+
+.newSectionContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	min-height: 300px;
+	width: 100%;
+	margin-top: 15px;
+	flex-grow: 3;
+}
+
+.newDescriptionList {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	list-style: none;
+	width: 98%;
+	padding: 5px;
+}
+
+.newDescription {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 14%;
+	padding: 10px;
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.newSectionContent {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	width: 98%;
+	margin: 0px 0px 10px 5px;
+	min-height: max-content;
+}
+
+.newSectionContent p {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	margin-bottom: 5px;
+}
+
+
+.newSectionContent input {
+	text-align: right;
+	width: 15%;
+	height: 18px;
+	margin-left: 2px ;
+	background-color: #fff;
+	width: 14%;
+}
+
+.newSectionContent input:first-child {
+	width: 23%;
+	text-align: left;
+}
+
+.newSectionContent p:nth-child(2),
+.newSectionContent p:nth-child(3) {
+	width: 75%;
+}
+
+.newSectionContent li {
+	display: flex;
+	justify-content: center;
+	width: 30%;
+	height: 15px;
+	background-color: #fff;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+/*----------Down----------*/
+
+
+.newDownContainer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	flex-grow: .3;	
+}
+
+.newFirmaEmpleado {
+	display: flex;
+	width: 150px;
+	align-items: end;
+	justify-content: center;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.newDownR {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: space-between;
+	width: 90%;
+	padding-right: 0px;
+}
+.newSubTotalContainer {
+	display: flex;
+	flex-direction: row;
+	margin: 0px 0px 9px 0;
+	width: 55%;
+	align-items: center;
+}
+
+.newSubTotalContainer p {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+	border-radius: 1px;
+	align-items: end;
+	justify-content: center;
+}
+/* top | right | bottom | left */
+
+.newTotalNeto {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin: 10px 3px 0px 7px;
+}
+
+.newTotalNeto label {
+	width: 70px;
+}
+
+.newTotalNeto p {
+	width: 100%;
+	height: 25px;
+	border-radius: 3px;
+	margin-left: -59px;
+}
+
+.newTotalAString {
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	align-self: center;
+}
+
+.newTotalAString p {
+	display: flex;
+	width: 100%;
+	padding-left: 160px;
+	height: 50px;
+	font-size: 17px;
+}
+
+
+.hidden {
+	display: none;
+}

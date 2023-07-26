@@ -1,0 +1,108 @@
+/* body {
+    background-color: #222;
+    color: #fafafa;
+} */
+
+    /* seccion de contenedor de calculadora */
+    .calculatorContainer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(12, 12, 12, 0.786);
+        width: 500px;
+        height: 600px;
+        border: 5px solid black;
+        box-shadow:2px 2px 10px 10px rgb(0, 0, 0);
+        padding: 20px;
+        font-family:'Bagel Fat One', cursive;
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px;
+        /* background-color: red; */
+        width: 400px;
+        height: 200px;
+        font-size: 15px;
+    }
+    
+    .formContainer b {
+        margin: 5px;
+        color: #111;
+        font-size: 15;
+    }
+
+    #inputValue {
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+        border: solid 3px #111;
+    }
+
+    #propanePercentageSlider{
+        cursor: pointer;
+        width: 135px;
+    }
+    
+    #sliderValue {
+        font-size: 19px;
+        margin: 0 0 10px 0; 
+    }
+
+    .sendButton {
+        height: 35px;
+        width: 90px;
+        border-radius: 10px;
+        border: solid #000 2px;
+        font-family: 'Bagel Fat One', cursive;  
+    }
+
+    .sendButton:hover {
+        font-size: 12px;
+        box-shadow: 2px 2px 10px 5px rgb(49, 90, 134);
+    }
+
+    /*Seccion de contenedor y number-boxes */
+    .numbersContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: #111;
+        width: 400px;
+        height: 500px;
+        margin: 10px 10px 50px 10px;
+        padding: 20px;
+
+    }
+    
+    .number, .del, .clear{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #dcdbdb;
+        background-color: rgba(255, 255, 255, 0.094);
+        border-radius: 30%;
+        border: 1px solid #8c8c8c;
+        width: 70px;
+        height: 50px;
+        margin: 20px;
+        font-size: 23px;
+        font-family: 'Bagel Fat One', cursive;
+    }  
+
+    .number:hover, .del:hover, .clear:hover {
+        box-shadow:2px 2px 10px 5px rgb(49, 90, 134);
+        cursor: pointer;
+    }
+
+    .number:active, .del:active, .clear:active {
+        box-shadow:2px 2px 10px 10px rgb(49, 90, 134);
+        cursor: pointer;
+        font-size: 20px;
+        background-color: #111;
+    }
