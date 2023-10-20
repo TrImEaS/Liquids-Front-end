@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LiquidS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="stylesheet" type="text/css" href="printStyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link class="logotipo" rel="icon" href="Logotipo4.png">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+	<!-- Login Form -->
+	<div id="loginContainer">
+		<a id="hero"></a>
+		<div>
+			<img src="\Logos\Logo1.png" alt="Real Color Srl" id="loginLogo">
+			<p>Te damos la bienvenida a LiquidS</p>
+			<form action="" id="loginForm">
+				<div id="loginTop">
+					<label for="username">Usuario:</label>
+					<input name="username" placeholder="Real-Color" type="text">
+					<label for="password">Contraseña:</label>
+					<input name="password" placeholder="********" type="password">
+					<div id="loginBtnContainer">
+						<button class="loginBtn" type="button">Iniciar sesión</button>
+						<button class="loginBtn" type="button">Crear cuenta</button>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="linkContainer">
+					<a href="">Cambiar contraseña</a>
+					<a href="">Cambiar usuario</a>
+				</div>
+			</form>
+		</div>
+		<footer id="loginFooter">
+			<p>Copyright© 2000-2023 by Real Color S.R.L. All Rights Reserved.</p>
+		</footer>
+	</div>
+
+
+	<!-- Principal Page -->
+	<nav>
+		<div>
+			<a id="logoRef" href="#"></a>
+			<img src="/Logos/logoNav.jpg" alt="Logo de la compañía">
+		</div>
+		<ul>
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">Nuevo</a></li>
+			<li><a href="#">Editar</a></li>
+			<li><a href="#">Buscar</a></li>
+		</ul>
+	</nav>
+	<select name="selectCompany" id="selectCompany" required>
+		<option value="" selected disabled> Seleccione un Logo </option>
+		<option value="logo1">Real Color</option>
+		<option value="logo2">Technology Line</option>
+		<!-- <option value="TLine">T-Line</option>
+		<option value="LineTechnology">Line Technology</option> -->
+	</select>
+	<form class="mainContainer">
+		<!-- <header class="header"> -->
+		<!-- Top Header -->
+		<div class="topHeader">
+			<div class="dataTopL">
+				<div id="logoContainer"><img id="companyLogo" src="fondo.png" alt="Logo de la compania"></div>
+				<div class="companyData">
+					<p class="p1 hidden">
+						Real Color S.R.L<br><br>
+						Domicilio: NAZCA 3580, 2° P 'A'<br><br>
+						C.U.I.T.: 30-71045750-2
+					</p>
+					<p class="p2 hidden">
+						Technology Line S.R.L<br><br>
+						Domicilio: NAZCA 3580, 2° P 'A'<br><br>
+						C.U.I.T.: 30-71045750-2
+					</p>
+				</div>
+			</div>
+			<ul class="dataTopR">
+				<li class="cuil">
+					<label for="cuil">CUIL</label>
+					<input type="number" name="cuil" min="0" max="1000000000000000" placeholder="Ej: 10-45518784-4"
+						required>
+				</li>
+				<li class="numRecibo">
+					<label for="numRecibo">Recibo N°</label>
+					<input type="number" name="numRecibo" min="0" placeholder="Ej: 10">
+				</li>
+			</ul>
+
+		</div>
+		<!-- Mid Header -->
+		<div class="midHeader">
+			<ul class="dataMidA">
+				<li class="nombreApellido">
+					<label for="nombreApellido">Nombre y Apellido</label>
+					<input type="text" name="nombreApellido" placeholder="Ej: Pepito Thompson">
+				</li>
+
+				<li class="sector">
+					<label for="sector">Sector</label>
+					<input type="text" name="sector" placeholder="Ej: Sistemas">
+				</li>
+
+				<li class="legajo">
+					<label for="legajo">Legajo</label>
+					<input type="number" name="legajo" placeholder="Ej: 11">
+				</li>
+
+				<li class="categoria">
+					<label for="categoria">Categoria</label>
+					<input type="text" name="categoria" placeholder="Ej: A">
+				</li>
+
+			</ul>
+
+			<ul class="dataMidB">
+				<li class="nombreBanco">
+					<label for="nombreBanco">Banco Deposito</label>
+					<input type="text" name="nombreBanco" placeholder="Ej: Galicia">
+				</li>
+
+				<li class="periodo">
+					<label for="periodo">Periodo</label>
+					<input type="text" name="periodo" placeholder="Ej: sas">
+				</li>
+
+				<li class="fechaDeposito">
+					<label for="fechaDeposito">Fecga Deposito</label>
+					<input type="date" min="1900-01-01" max="2023-01-01" name="fechaDeposito"
+						placeholder="Ej: 16/06/23">
+				</li>
+
+				<li class="tareaAsignada">
+					<label for="tareaAsignada">Tarea Desempeñada</label>
+					<input type="text" name="tareaAsignada" placeholder="Ej: Sistemas">
+				</li>
+
+				<li class="fechaIngreso">
+					<label for="fechaIngreso">Fecha Ingreso</label>
+					<input type="date" min="1900-01-01" max="2023-01-01" name="fechaIngreso" placeholder="Ej: 12/06/23">
+				</li>
+
+				<li class="remuBasica">
+					<label for="remuBasica">Rem. Basica</label>
+					<input type="number" name="remuBasica" placeholder="Ej: 100000">
+				</li>
+			</ul>
+		</div>
+
+		<!-- Bottom Header -->
+		<ul class="dataBottom">
+			<li class="periodoAbonado">
+				<label for="periodoAbonado">Periodo<br>Abonado</label>
+				<input type="text" name="periodoAbonado" placeholder="Ej: Julio del 2023">
+			</li>
+
+			<li class="lugarFechaPago">
+				<label for="lugarFechaPago">Lugar y Fecha<br>de Pago</label>
+				<input type="text" name="lugarFechaPago" placeholder="Ej: Ciudad Autonoma De Buenos Aires, 15/12/23">
+			</li>
+		</ul>
+
+		<div class="sectionContainer">
+			<ul class="sectionList">
+				<li class="description">
+					<p>Descripcion de Conceptos</p>
+				</li>
+				<li class="description">
+					<p>Unidades</p>
+				</li>
+				<li class="description">
+					<p>Valor<br>Unitario</p>
+				</li>
+				<li class="description">
+					<p>Haberes<br>Remunerativos</p>
+				</li>
+				<li class="description">
+					<p>Haberes No<br>Remunerativos</p>
+				</li>
+				<li class="description">
+					<p>Descuentos</p>
+				</li>
+			</ul>
+			<ul class="sectionContent">
+				<input type="text" minlength="3" maxlength="30" class="g" placeholder="Descripcion...">
+				<input type="number" min="0" max="10000000" class="g">
+				<input type="number" min="0" max="10000000" class="g">
+				<input type="number" min="0" max="10000000" class="g">
+				<input type="number" min="0" max="10000000" class="g">
+				<input type="number" min="0" max="10000000" class="g">
+			</ul>
+			<div class="sas">
+
+			</div>
+			<button type="button" class="sectionButton" onclick=addContent()>+</button>
+		</div>
+
+		<div class="downContainer">
+			<div class="firmaEmpleado">
+				<p>Firma Empleador</p>
+			</div>
+			<div class="downR">
+				<div class="subTotalContainer">
+					<label>SubTotal</label>
+					<input id="totalHR" type="text" min="0" max="10000000" name="totalHR" disabled>
+					<input id="totalHNR" type="text" min="0" max="10000000" name="totalHNR" disabled>
+					<input id="totalD" type="text" min="0" max="10000000" name="totalD" disabled>
+				</div>
+				<div class="totalNeto">
+					<label for="totalNeto">Total Neto</label>
+					<input id="totalNeto" type="text" name="totalNeto" min="0" max="10000000" disabled>
+				</div>
+				<div class="totalAString">
+					<label for="totalAString">Son:</label>
+					<input id="totalAString" type="text" name="totalAString" disabled>
+				</div>
+			</div>
+		</div>
+		<div id="btnContainer">
+			<button type="button" id="btnPrint">Imprimir</button>
+			<button type="button" id="btnClean">Limpiar</button>
+		</div>
+	</form>
+	<footer>
+		<p>Copyright© 2000-2023 by Real Color S.R.L. All Rights Reserved.</p>
+	</footer>
+
+	<!-- ----------------------------- -->
+	<!-- ----------------------------- -->
+	<!-- ----------------------------- -->
+
+
+	<div class="printContainer hidden">
+		<div class="container">
+			<div class="newTopHeader">
+				<div class="newDataTopL">
+					<div class="printCompanyLogo"></div>
+					<div class="newCompanyData">
+						<span class="span1">
+							<br>
+							Real Color S.R.L<br>
+							Domicilio: NAZCA 3580, 2° P 'A'<br>
+							C.U.I.T.: 30-71045750-2
+						</span>
+						<span class="span2">
+							<br>
+							Technology Line S.R.L<br>
+							Domicilio: NAZCA 3580, 2° P 'A'<br>
+							C.U.I.T.: 30-71045750-2
+						</span>
+					</div>
+				</div>
+				<ul class="newDataTopR">
+					<li class="newCuil">
+						<label for="cuil"></label>
+						<p class="newCuil"></p>
+					</li>
+					<li class="newNumRecibo">
+						<label for="numRecibo"></label>
+						<p class="newNumRecibo"></p>
+					</li>
+				</ul>
+
+			</div>
+
+
+			<!---------------- MidHeaderA ---------------->
+
+
+			<div class="newMidHeader">
+				<ul class="newDataMidA">
+					<li>
+						<label for="nombreApellido"></label>
+						<p class="newNombreApellido"></p>
+					</li>
+					<li>
+						<label for="sector"></label>
+						<p class="newSector"></p>
+					</li>
+
+					<li>
+						<label for="legajo"></label>
+						<p class="newLegajo"></p>
+					</li>
+
+					<li>
+						<label for="categoria"></label>
+						<br>
+						<p class="newCategoria"></p>
+					</li>
+
+				</ul>
+
+				<!---------------- MidHeaderB ---------------->
+
+				<ul class="newDataMidB">
+					<li class="newNombreBanco">
+						<label for="nombreBanco"></label>
+						<p class="newNombreBanco"></p>
+					</li>
+
+					<li class="newPeriodo">
+						<label for="periodo"></label>
+						<p class="newPeriodo"></p>
+					</li>
+
+					<li class="newFechaDeposito">
+						<label for="fechaDeposito"></label>
+						<p class="newFechaDeposito"></p>
+					</li>
+
+					<li class="newTareaAsignada">
+						<label for="tareaAsignada"></label>
+						<p class="newTareaAsignada"></p>
+					</li>
+
+					<li class="newFechaIngreso">
+						<label for="fechaIngreso"></label>
+						<p class="newFechaIngreso"></p>
+					</li>
+
+					<li class="newRemuBasica">
+						<label for="remuBasica"></label>
+						<p class="newRemuBasica"></p>
+					</li>
+				</ul>
+			</div>
+
+			<!---------------- BottomHeader ---------------->
+
+			<ul class="newDataBottom">
+				<li class="newPeriodoAbonado">
+					<label for="periodoAbonado"></label>
+					<p class="newPeriodoAbonado"></p>
+				</li>
+
+				<li class="newLugarFechaPago">
+					<label for="lugarFechaPago"></label>
+					<p class="newLugarFechaPago"></p>
+				</li>
+			</ul>
+
+
+			<!---------------- SectionConteiner ---------------->
+			<form class="newSectionContainer">
+				<ul class="newDescriptionList">
+					<li class="newDescription"></li>
+					<li class="newDescription"></li>
+					<li class="newDescription"></li>
+					<li class="newDescription"></li>
+					<li class="newDescription"></li>
+					<li class="newDescription"></li>
+				</ul>
+			</form>
+
+			<ul class="newSectionContent"></ul>
+
+
+			<!---------------- FooterDown ---------------->
+
+
+			<div class="newDownContainer">
+				<div class="newFirmaEmpleado">
+				</div>
+				<div class="newDownR">
+					<div class="newSubTotalContainer">
+						<label></label>
+						<p id="newTotalHR"></p>
+						<p id="newTotalHNR"></p>
+						<p id="newTotalD"></p>
+					</div>
+					<div class="newTotalNeto">
+						<label for="totalNeto"></label>
+						<p id="newTotalNeto"></p>
+					</div>
+					<div class="newTotalAString">
+						<label for="totalAString"></label>
+						<p id="newTotalAString"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 									 -->
+		<div class="space"></div>
+
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
