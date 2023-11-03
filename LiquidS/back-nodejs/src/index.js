@@ -1,10 +1,13 @@
 import express from 'express'
+import config from './libs/config.js'
+import db from './db.js'
+import middlewares from './libs/middlewares.js'
+import boot from './libs/boot.js'
+import routes from './routes/index.js'
 
 const app = express()
 
-// Settings
-app.set('port', process.env.PORT ?? 3000)
-
-app.listen(app.get('port'), () => {
-  console.log('Server on port', app.get('port'))
-})
+db(app)
+middlewares(app)
+routes(app)
+boot(app)
