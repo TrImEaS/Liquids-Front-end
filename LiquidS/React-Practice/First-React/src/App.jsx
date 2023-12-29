@@ -6,9 +6,10 @@ export function App () {
   return (
     <>
       <div id='container'>
-        <TwitterFollowCard initialIsFollowing userName="Noiszia" name="Gonzalo Rives vive cerca de fletes"/>
-        <TwitterFollowCard initialIsFollowing userName="PalaveccinoLu" name="Platonica de Fernan"/>
-        <TwitterFollowCard initialIsFollowing={false} userName="Jugadornro99" name="Fernan El Crack"/>
+        <TwitterFollowCard initialIsFollowing userName="Tede00" name="TedeElJede"/>
+        <TwitterFollowCard initialIsFollowing userName="TrImEaS" name="TrImEaS"/>
+        <TwitterFollowCard initialIsFollowing userName="JMilei" name="Javier Milei"/>
+        <TwitterFollowCard initialIsFollowing={false} userName="Agusibanez" name="AgusCLaCme"/>
       </div>
     </>
   )
