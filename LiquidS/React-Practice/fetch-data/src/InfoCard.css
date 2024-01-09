@@ -1,0 +1,32 @@
+.info-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px #fff solid;
+  width: 200px;
+  height: 350px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.info-card-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card span {
+  color: coral;
+  font-size: 1rem;
+}
+
+.info-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+
+.info-card-header img {
+  width: 90%;
+  border-radius: 10px;
+}

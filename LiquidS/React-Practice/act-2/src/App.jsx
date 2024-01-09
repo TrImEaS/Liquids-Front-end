@@ -1,25 +1,21 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
-import img1 from './images/rey_sos.png'
-import img2 from './images/rey_sas.png'
 
 function App () {
-  const [count, setCount] = useState(1)
-  const add = () => {
-    if (count === 9) { setCount(count - 9) } else setCount(count + 1)
-  }
+  const [dataArray, setDataArray] = useState([])
 
-  const change = (e) => {
-    if (e.target.src.includes('sas')) e.target.src = img1
-    else e.target.src = img2
-  }
+  useEffect(() => {
+    fetch('https://dummyjson.com/products')
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(`Error al obtener datos: ${err}`))     
+  },[])
+
   return (
     <>
-    <div id='div' className='box'>{count}</div>
-    <div onClick={change}><img src={img2} alt="" /></div>
-    <button onClick={add}>ADD</button>
+ 
     </>
+    
   )
 }
 
