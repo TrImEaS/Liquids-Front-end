@@ -1,30 +1,30 @@
 import { useState, useEffect } from 'react'
-import InfoCard from './InfoCard'
 import './App.css'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import Nav from './Nav'
+import Atanagildo from './Components/Atanagildo'
+import Ataulfo from './Components/Ataulfo'
+import Ervigio from './Components/Ervigio'
+import Leovigildo from './Components/Leovigildo'
+import Recesvinto from './Components/Recesvinto'
+import Sisebuto from './Components/Sisebuto'
 
 function App() {
-  const [product, setProduct] = useState([]);
-
-  useEffect(() => {
-    change()
-  },[])
-
-  const change = ()=>{
-    fetch('https://dummyjson.com/products')
-      .then(res => {
-        if(!res.ok) throw new Error(`HTTP error! Status: ${res.status}`)
-        return res.json()
-      })
-      .then(d => d.products.map(n => 
-        setProduct(e => [...e,<div className='divi' key={n.id}>{n.title}</div>])))
-      .catch(e => console.log('Error fetching data:', e))
-  }
 
   return (
     <>
-    <div className='sos'>
-      {product}  
-    </div>
+    <BrowserRouter>
+      <Nav></Nav>
+      <Routes>
+        <Route path='/Atanagildo' element={<Atanagildo/>}></Route>
+        <Route path='/Ataulfo' element={<Ataulfo/>}></Route>
+        <Route path='/Ervigio' element={<Ervigio/>}></Route>
+        <Route path='/Leovigildo' element={<Leovigildo/>}></Route>
+        <Route path='/Leogivildo' element={<Navigate to="/Leovigildo"></Navigate>}></Route>
+        <Route path='/Recesvinto' element={<Recesvinto/>}></Route>
+        <Route path='/Sisebuto' element={<Sisebuto/>}></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

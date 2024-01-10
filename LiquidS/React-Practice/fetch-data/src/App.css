@@ -1,20 +1,10 @@
-body {
+#root {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  box-sizing: content-box;
   padding: 10px;
+  height: 90vh;
+  width: 100vw;
 }
 
-.sos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 80%;
-}
-
-.divi {
-  border: 1px #fff solid;
-  padding: 5px;
-}
