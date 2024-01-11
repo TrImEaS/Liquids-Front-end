@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Nav from './Nav'
-import Atanagildo from './Components/Atanagildo'
-import Ataulfo from './Components/Ataulfo'
-import Ervigio from './Components/Ervigio'
-import Leovigildo from './Components/Leovigildo'
-import Recesvinto from './Components/Recesvinto'
-import Sisebuto from './Components/Sisebuto'
+import Error404 from './Components/Error404'
+import Home from './Components/Home'
+import Rey from './Components/Rey'
+import './App.css'
 
 function App() {
 
@@ -16,13 +13,9 @@ function App() {
     <BrowserRouter>
       <Nav></Nav>
       <Routes>
-        <Route path='/Atanagildo' element={<Atanagildo/>}></Route>
-        <Route path='/Ataulfo' element={<Ataulfo/>}></Route>
-        <Route path='/Ervigio' element={<Ervigio/>}></Route>
-        <Route path='/Leovigildo' element={<Leovigildo/>}></Route>
-        <Route path='/Leogivildo' element={<Navigate to="/Leovigildo"></Navigate>}></Route>
-        <Route path='/Recesvinto' element={<Recesvinto/>}></Route>
-        <Route path='/Sisebuto' element={<Sisebuto/>}></Route>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/Componentes/:rey' element={<Rey></Rey>}></Route>
+        <Route path='/*' element={<Error404/>}></Route>
       </Routes>
     </BrowserRouter>
     </>
