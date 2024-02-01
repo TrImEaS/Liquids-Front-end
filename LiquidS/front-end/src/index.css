@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav .isActive {
+  color: #67EEF9 !important
+}

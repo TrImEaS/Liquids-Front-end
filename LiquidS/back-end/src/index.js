@@ -7,7 +7,3 @@ import routes from './routes/index.js'
 
 const app = express()
 
-db(app)
-middlewares(app)
-routes(app)
-boot(app)
