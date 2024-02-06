@@ -17,7 +17,7 @@ export default function NavLinks({ style }) {
          to='/editar'
          className={` ${location.pathname === '/editar' ? 'isActive' : ''} ${style} 
          dark:hover:text-cyan-500 hover:text-[#378d86]  dark:text-slate-50 duration-300`} 
-         >Ver
+         >Editar
       </NavLink>
 
       <NavLink 
@@ -31,7 +31,7 @@ export default function NavLinks({ style }) {
          to='/ver'
          className={` ${location.pathname === '/ver' ? 'isActive' : ''} ${style} 
          dark:hover:text-cyan-500 hover:text-[#378d86]  dark:text-slate-50 duration-300`} 
-         >Editar
+         >Ver
       </NavLink>
 
     </>

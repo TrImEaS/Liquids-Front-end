@@ -1,5 +1,5 @@
 [{
-  "docket": 10,
+  "docket": 1,
   "cuil": 1045518784,
   "reciboNro": 10,
   "completeName": "Julio Arroyo",
@@ -9,31 +9,34 @@
   "basicRem": 100000,
   "category": "A",
   "bank": "Galicia",
-  "period": "undefined"
+  "period": "",
+  "company": "realcolor"
 },
 {
-  "docket": 10,
+  "docket": 2,
   "cuil": 1045518784,
   "reciboNro": 10,
-  "completeName": "Julio Arroyo",
-  "sector": "Sistemas",
+  "completeName": "Rojas Thomas",
+  "sector": "Auxiliar",
   "performedTask": "Sistemas",
   "admisionDate": "2024-01-10",
   "basicRem": 100000,
   "category": "A",
   "bank": "Galicia",
-  "period": "undefined"
+  "period": "",
+  "company": "tline"
 },
 {
-  "docket": 10,
+  "docket": 3,
   "cuil": 1045518784,
   "reciboNro": 10,
-  "completeName": "Julio Arroyo",
-  "sector": "Sistemas",
+  "completeName": "Excel",
+  "sector": "Auxiliar",
   "performedTask": "Sistemas",
   "admisionDate": "2024-01-10",
   "basicRem": 100000,
   "category": "A",
   "bank": "Galicia",
-  "period": "undefined"
+  "period": "",
+  "company": "realcolor"
 }]

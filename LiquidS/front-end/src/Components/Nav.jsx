@@ -7,7 +7,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className='z-50 fixed w-full dark:bg-slate-800 bg-[#aacac7] flex h-[80px] justify-between items-center px-4'>
+      <nav className='z-50 fixed w-full dark:bg-slate-800 bg-slate-400 flex h-[80px] justify-between items-center px-4'>
         <section>
           <Logo></Logo>
         </section>

@@ -3,16 +3,13 @@ import Concept from './Concept';
 import realcolorImg from '../Images/Companies/real-color.png';
 import tlineImg from '../Images/Companies/t-line.png';
 
-export default function Receipt (employee, { month, depositDate, detailsOfPayment }) {
-  const [selectedLogo, setSelectedLogo] = useState("realcolor")
-  // const [receiptData, setReceiptData] = useState({
-  //   employee.
-  // })
+export default function Receipt ({ employee, periodPayment, depositDate, detailsOfPayment, receiptNumber }) {
+  const [selectedLogo, setSelectedLogo] = useState(employee.company)
   const handleLogoChange = () => setSelectedLogo((prevLogo) => (prevLogo === "realcolor" ? "tline" : "realcolor"))
   
   
 
-  const getSelectedLogoComponent = () => {
+  const getSelectedLogo = () => {
     if (selectedLogo === "realcolor") {
       return (
         <>
@@ -49,11 +46,13 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
   }
 
    return (
-    <form name="container" className="w-full max-w-[45rem] flex flex-col bg-[#F8F9F9] 
-    box-border text-black sm:text-s text-xs">
+    <form 
+      name="receipt-container" 
+      className="w-full max-w-[45rem] flex flex-col bg-[#F8F9F9] box-border border-2 border-black text-black sm:text-s text-xs rounded rounded-t-none p-1">
+      
       <header className="grid grid-cols-6 border-b-2 border-b-black w-full p-1 min-h-[150px]">
         <section className="grid grid-cols-2 gap-3 col-span-4 h-[100px]">
-        {getSelectedLogoComponent()}
+        {getSelectedLogo()}
         </section>
         <section className="flex flex-col justify-around col-span-2 py-4">
           <article className="flex gap-x-4 justify-around w-full">
@@ -79,6 +78,7 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
               className="w-3/4 outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="receipt" 
               type="text" 
+              defaultValue={receiptNumber}
               placeholder="Ej: 10"/>
           </article>
         </section>
@@ -179,7 +179,7 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
             className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
             id="deposit-date" 
             type="date"
-            defaultValue={month} 
+            value={depositDate} 
             placeholder="Ej: 11"/>
         </li>
 
@@ -205,7 +205,7 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
             className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
             id="admisionDate" 
             type="date"
-            value={employee.admisionDate}/>
+            defaultValue={employee.admisionDate}/>
         </li>
 
         <li className="flex flex-col items-center gap-y-2">
@@ -233,7 +233,7 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
             className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
             id="deposit-date" 
             type="text"
-            defaultValue={depositDate} 
+            defaultValue={periodPayment} 
             placeholder="Ej: Julio del 2023"/>
         </li>
         <li className="flex items-center gap-y-2 w-full">
@@ -281,9 +281,7 @@ export default function Receipt (employee, { month, depositDate, detailsOfPaymen
 
       {/*Concepts*/}
       <div className="min-h-[200px]">
-        <Concept detail={"Basico"} remSalary={employee.basicRem}></Concept>
-        <Concept detail={"Presentismo"}></Concept>
-        <Concept detail={"Premio"}></Concept>
+        <Concept concept={"Basico"} remSalary={employee.basicRem}></Concept>
       </div>
     </section>
     
