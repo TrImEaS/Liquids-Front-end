@@ -1,8 +1,30 @@
 [{
   "id": 1,
-  "name": "Basico"
+  "name": "Basico",
+  "type": "rem"
 },
 {
  "id": 2,
- "name": "Presentismo"
-}]
+ "name": "Presentismo",
+ "type": "rem"
+},
+{
+  "id": 3,
+  "name": "Antiguedad",
+  "type": "rem"
+ },
+ {
+  "id": 5,
+  "name": "vacaciones",
+  "type": "rem"
+ },
+ {
+  "id": 6,
+  "name": "Pres. Norem",
+  "type": "norem"
+ },
+ {
+  "id": 7,
+  "name": "Obra Social Norem",
+  "type": "norem"
+ }]

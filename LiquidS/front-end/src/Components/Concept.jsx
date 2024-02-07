@@ -1,56 +1,62 @@
-import React from "react";
+import React, { useState } from 'react'
 import concepts from '../Json/concepts.json'
 
 export default function ({ remSalary, noremSalary, discount }) {
+  
+  const [subTotal, setSubTotal] = useState([{
+    totalRem: 0.00,
+    totalNorem: 0.00,
+    discount: 0.00
+  }])
+
+  const [totalNet, setTotalNet] = useState(0.00)
+  const [totalToString, setTotalToString] = useState('')
+
   return (
     <ul name="concepts" className="grid grid-cols-6 gap-x-1 px-2">
       <li className="flex items-center gap-y-2 w-full">
-        <select name="concepts">
+        <select name="concepts" className="bg-[#D5D8DC] w-full">
           <option selected disabled>Elegir</option>
           {concepts.map(concept => (
-            <option key={concept.id} value="">{concept.name}</option>
+            <option 
+              key={concept.id} 
+              value={''}>{concept.name}</option>
           ))}
         </select>
-        
-        {/* <input 
-          className="w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
-          type="text"
-          defaultValue={detail} 
-          placeholder="Concepto"
-        /> */}
       </li>
 
-      <li className="flex items-center gap-y-2 w-full">
+      <li name="units" className="flex items-center gap-y-2 w-full">
         <input 
           className="w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
           type="number"
         />
       </li>
 
-      <li className="flex items-center gap-y-2 w-full">
+      <li name='unitaryValue' className="flex items-center gap-y-2 w-full">
         <input 
           className="w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
           type="number"
         />
       </li>
 
-      <li className="flex items-center gap-y-2 w-full">
-        <input 
+      <li name='rem' className="flex items-center gap-y-2 w-full">
+        <input
+          id='rem' 
           className="rem-salary w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
           type="number"
           defaultValue={remSalary}
         />
       </li>
 
-      <li className="norem-salary flex items-center gap-y-2 w-full">
+      <li name='norem' className="norem-salary flex items-center gap-y-2 w-full">
         <input 
-          className="w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
+          className="norem-salary w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
           type="number"
           defaultValue={noremSalary} 
         />
       </li>
       
-      <li className="flex items-center gap-y-2 w-full">
+      <li name='discounts' className="flex items-center gap-y-2 w-full">
         <input 
           className="discount w-full outline-none rounded py-1 pl-3 h-[80%] bg-[#D5D8DC]" 
           type="number"
