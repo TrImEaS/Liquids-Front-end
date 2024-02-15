@@ -19,7 +19,7 @@ export default function Home() {
             showThumbs={0}
             swipeable
             emulateTouch
-            dynamicHeight>
+          >
             <div>
               <img src={img1}/>
             </div>
@@ -48,7 +48,7 @@ export default function Home() {
         </section>
 
         {/*Categories*/}
-        <section className='flex w-3/4 justify-between gap-x-3 box-border'>
+        <section className='flex w-3/4 justify-between gap-3 box-border flex-wrap'>
           <article className='flex flex-col items-center justify-center gap-y-2'>
             <div className='w-28 h-28 rounded-full bg-marine-100'></div>
             <p><span>Item</span></p>
@@ -86,9 +86,9 @@ export default function Home() {
         </section>
 
         {/*Products carousel*/}
-        
-          <ProductsCarousel></ProductsCarousel>
-
+          <section className='w-3/4'>
+           <ProductsCarousel></ProductsCarousel>
+          </section>
         <div className='h-[300px] w-full bg-blue-100'></div>
         
       </div>

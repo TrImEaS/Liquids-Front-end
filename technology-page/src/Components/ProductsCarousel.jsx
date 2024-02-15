@@ -25,13 +25,18 @@ export default function ProductsCarousel () {
   }  
 
   return(
-    <div className='w-3/4'>
+    <div className='w-full bg-slate-400 '>
       <Carousel responsive={responsiveCarousel}>
           <ProductCard 
             price={49.99} 
             name={'Product'}>
           </ProductCard>
 
+          <ProductCard 
+            price={49.99} 
+            name={'Product'}>
+          </ProductCard>
+          
           <ProductCard 
             price={49.99} 
             name={'Product'}>

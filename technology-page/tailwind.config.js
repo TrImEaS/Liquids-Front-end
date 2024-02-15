@@ -13,10 +13,10 @@ export default {
           400: '#03243f',
           500: '#031f36',
         },
+      },
 
-        hover:{
-          primary: ''
-        }
+      fontFamily:{
+        'body': ['Josefin Sans', 'Georgia']
       }
     },
   },
