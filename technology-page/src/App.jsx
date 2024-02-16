@@ -7,7 +7,7 @@ function App() {
   return (
     <main className="flex flex-col items-center font-body bg-slate-100 text-black min-h-screen min-w-[390px] h-full">
       <Nav></Nav>
-      <Routes>X
+      <Routes>
         <Route
           path="/"
           element={<Home/>}

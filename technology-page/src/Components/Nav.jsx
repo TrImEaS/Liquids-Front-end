@@ -33,7 +33,7 @@ export default function Nav() {
     <nav className='z-50 flex flex-col w-full relative items-center'>
      
     {/*---Nav top---*/}
-      <section className={`grid grid-cols-2 md:grid-cols-3 justify-between items-center h-20 w-3/4 min-w-[640px]`}>
+      <section className={`grid grid-cols-2 md:grid-cols-3 justify-between items-center h-20 w-3/4 min-w-[670px]`}>
         
       {/*Logo*/}
         <NavLink 
@@ -47,7 +47,7 @@ export default function Nav() {
 
       {/*Search input*/}
         <form 
-          className='hidden md:flex gap-2 justify-center bg-gray-300 rounded-full items-center px-2'
+          className='hidden md:flex gap-2 mr-2 justify-center bg-gray-300 rounded-full items-center px-2'
           onSubmit={handleSubmit}
         >
           <FaSearch/>
@@ -78,12 +78,12 @@ export default function Nav() {
 
     
       {/*---Nav bottom Full Screen---*/}
-      <section className='hidden md:flex z-50 w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50 text-[13px]'>
-        <article className='w-3/4 flex h-[40px] items-center justify-around min-w-[640px]'>
+      <section className='hidden md:flex z-50 w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50 text-[14px]'>
+        <article className='w-3/4 flex h-[50px] items-center justify-around min-w-[640px]'>
           {/*Categorias*/}
           <button 
             onClick={handleClickCategories} 
-            className='flex items-center gap-x-2 text-[13px] w-[200px] pl-3'>
+            className='flex items-center gap-x-2 w-[200px] pl-3'>
             {
               !categoriesMenu
                 ? <FaBars className='mb-[2.5px]'/>
@@ -92,8 +92,8 @@ export default function Nav() {
             <span>Categorías</span>
           </button>
 
-          <section className='min-w-[530px] w-full'>
-            <Categories containerStyle={'gap-x-1'}/>
+          <section className='pl-3 min-w-[530px] w-full'>
+            <Categories containerStyle={'gap-x-3'}/>
           </section>
         </article>
       </section>

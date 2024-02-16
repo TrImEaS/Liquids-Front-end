@@ -1,57 +1,19 @@
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css'
 import ProductCard from './ProductCard';
+import products from '../Data/products.json'
 
 export default function ProductsCarousel () {
 
-  const responsiveCarousel = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  }  
+  const someProducts = products.slice(1, 11);
 
   return(
-    <div className='w-full bg-slate-400 '>
-      <Carousel responsive={responsiveCarousel}>
-          <ProductCard 
-            price={49.99} 
-            name={'Product'}>
-          </ProductCard>
-
-          <ProductCard 
-            price={49.99} 
-            name={'Product'}>
-          </ProductCard>
-          
-          <ProductCard 
-            price={49.99} 
-            name={'Product'}>
-          </ProductCard>
-
-          <ProductCard 
-            price={49.99} 
-            name={'Product'}>
-          </ProductCard>
-
-          <ProductCard 
-            price={49.99} 
-            name={'Product'}>
-          </ProductCard>
-      </Carousel>
-    </div>
-  )
+      <div className='w-full flex gap-x-20 overflow-x-scroll overflow-y-hidden py-10'>
+        {someProducts.map(product => (
+          <ProductCard
+            key={product.ID}
+            img={product.image}
+            price={product.price}
+            name={product.description}
+          ></ProductCard>
+        ))}
+      </div>)
 }

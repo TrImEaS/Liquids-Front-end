@@ -13,7 +13,6 @@ export default function Categories ({ containerStyle, itemStyle }) {
     'Electrodomesticos',
     'Informática',
     'Tecnologia',
-    'Mas Categorías',
     'Outlet'
   ]
 
