@@ -33,7 +33,7 @@ export default function Nav() {
     <nav className='z-50 flex flex-col w-full relative items-center'>
      
     {/*---Nav top---*/}
-      <section className={`grid grid-cols-2 md:grid-cols-3 justify-between items-center h-20 w-3/4 min-w-[670px]`}>
+      <section className={`grid grid-cols-2 md:grid-cols-3 justify-between items-center h-20 w-3/4 px-2 min-w-[670px]`}>
         
       {/*Logo*/}
         <NavLink 
@@ -109,7 +109,7 @@ export default function Nav() {
             <input 
               id='search'
               type="text" 
-              className='w-full placeholder:text-gray-500 bg-sky-300 text-black outline-none px-3 py-1 rounded-full'
+              className='w-full placeholder:text-gray-500 bg-gray-300 text-black outline-none px-3 py-1 rounded-full'
               placeholder='Buscar'
               onChange={handleChange}
             />

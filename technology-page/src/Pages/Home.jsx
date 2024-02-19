@@ -1,36 +1,15 @@
 import React from 'react'
-import ProductsCarousel from '../Components/ProductsCarousel';
-import { Carousel } from 'react-responsive-carousel'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-export default function Home() {
+import ProductsCarousel from '../Components/ProductsCarousel'
+import BannerCarousel from '../Components/BannerCarousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-  const img1 = 'https://medias.musimundo.com/medias/Header-ZC-ClimaVeranoLS-V8-P1.jpg?context=bWFzdGVyfGltYWdlc3wxODc2MjZ8aW1hZ2UvanBlZ3xhRGd6TDJoaE1pOHhNRFV6TmpFM016SXdOelU0TWk5SVpXRmtaWEpmV2tOZlEyeHBiV0ZXWlhKaGJtOU1VMTlXT0Y5UU1TNXFjR2N8MjFiMDg2ZjhhYTFkNTg0OTdmZGI1MWM2ZTUzYWI5NWQ1NzZjMGU0OTE3NDIzNGY2YjYxYjFjOTkwNGY1MGNiOQ'
-  const img2 = 'https://medias.musimundo.com/medias/Header-ZC0Flow-MotoSale-V1-P2.jpg?context=bWFzdGVyfGltYWdlc3wxODA4NzJ8aW1hZ2UvanBlZ3xhR1psTDJnNU9DOHhNRFV6TmpFME1UUTFOVE01TUM5SVpXRmtaWEpmV2tNd1JteHZkMTlOYjNSdlUyRnNaVjlXTVY5UU1pNXFjR2N8NzY4NmRjYTI3OGIzNGYwOGQzYjBiMjJlM2YxNDQ2NmMwYTA5NDNiYzhmOGQzYjRjMTFmMjVlMjg2M2U0OGFjNQ'
+export default function Home() {
 
   return (
       <div name='home' className='flex flex-col items-center gap-10 min-h-screen h-full w-full'>
-      {/*Carrusel/Banner*/}
-        <section>
-          <Carousel 
-            autoPlay={3000}
-            infiniteLoop
-            stopOnHover
-            transitionTime={500}
-            showThumbs={0}
-            swipeable
-            emulateTouch
-          >
-            <div>
-              <img src={img1}/>
-            </div>
-            <div>
-              <img src={img2}/>
-            </div>
-            <div>
-              <img src={img1}/>
-            </div>
-          </Carousel>
-        </section>
+     
+        {/*Carrusel/Banner*/}
+        <BannerCarousel/>
 
         {/*Banners*/}
         <section className='flex flex-col items-center w-full gap-y-10'>
