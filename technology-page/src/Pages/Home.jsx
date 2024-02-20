@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import BannerCarousel from '../Components/BannerCarousel'
+import CategoriesCarousel from '../Components/CategoriesCarousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 export default function Home() {
@@ -27,48 +28,33 @@ export default function Home() {
         </section>
 
         {/*Categories*/}
-        <section className='flex w-3/4 justify-between gap-3 box-border flex-wrap'>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
-
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <div className='w-28 h-28 rounded-full bg-marine-100'></div>
-            <p><span>Item</span></p>
-          </article>
+        <section className='w-4/5'>
+          <CategoriesCarousel/>
         </section>
 
-        {/*Products carousel*/}
-          <section className='w-3/4'>
-           <ProductsCarousel></ProductsCarousel>
-          </section>
-        <div className='h-[300px] w-full bg-blue-100'></div>
+        {/*Products sale carousel*/}
+        <section className='w-3/4'>
+          <h1 className='font-bold text-3xl'>
+            OFERTAS
+          </h1>
+          <ProductsCarousel/>
+        </section>
+
+        {/*Products news carousel*/}
+        <section className='w-3/4'>
+          <h1 className='font-bold text-3xl'>
+            NOVEDADES
+          </h1>
+          <ProductsCarousel/>
+        </section>
+
+        {/*Products recomendations carousel*/}
+        <section className='w-3/4'>
+          <h1 className='font-bold text-3xl'>
+            TE RECOMENDAMOS
+          </h1>
+          <ProductsCarousel/>
+        </section>
         
       </div>
   )

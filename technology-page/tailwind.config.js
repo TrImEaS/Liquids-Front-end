@@ -15,19 +15,19 @@ export default {
         },
         page:{
           blue:{
-            normal: '0b4780',
-            dark: '01386c',
-            marine: '05345b',
-            darkMarine: '042138'
+            normal: '#0b4780',
+            dark: '#01386c',
+            marine: '#05345b',
+            darkMarine: '#042138'
           },
-          lightblue: '108bf1',
+          lightblue: '#108bf1',
           gray: {
-            light: 'd9d9d9',
-            dark: '494949'
+            light: '#d9d9d9',
+            dark: '#494949'
           },
-          red: 'df0202',
-          black: '000000',
-          white: 'ffffff',
+          red: '#df0202',
+          black: '#000000',
+          white: '#ffffff',
         }
       },
 

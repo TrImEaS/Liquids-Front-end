@@ -2,10 +2,11 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import { Home, Error, Search } from './Pages/Routes.jsx'
 import Nav from './Components/Nav'
+import Footer from "./Components/Footer.jsx"
 function App() {
 
   return (
-    <main className="flex flex-col items-center font-body bg-slate-100 text-black min-h-screen min-w-[390px] h-full">
+    <main className="flex flex-col items-center font-body bg-white text-black min-h-screen min-w-[390px] h-full">
       <Nav></Nav>
       <Routes>
         <Route
@@ -25,6 +26,7 @@ function App() {
           element={<Error/>}
         ></Route>
       </Routes>
+      <Footer></Footer>
     </main>
   )
 }

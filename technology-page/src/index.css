@@ -6,3 +6,9 @@
 .isActive {
   background-color: skyblue;
 }
+
+.stick-list {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
