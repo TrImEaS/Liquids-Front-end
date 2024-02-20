@@ -92,7 +92,7 @@ export default function Nav() {
             <span>Categorías</span>
           </button>
 
-          <section className='pl-3 min-w-[530px] w-full'>
+          <section className='pl-[280px] min-w-[530px] w-full'>
             <Categories containerStyle={'gap-x-3'}/>
           </section>
         </article>

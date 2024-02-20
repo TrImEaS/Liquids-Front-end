@@ -1,34 +1,55 @@
 import React from 'react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import BannerCarousel from '../Components/BannerCarousel'
+import BannersCards from '../Components/BannersCards'
 import CategoriesCarousel from '../Components/CategoriesCarousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 export default function Home() {
 
   return (
-      <div name='home' className='flex flex-col items-center gap-10 min-h-screen h-full w-full'>
+      <div name='home' className='flex flex-col items-center gap-10 min-h-screen h-full w-full gap-y-24'>
      
         {/*Carrusel/Banner*/}
         <BannerCarousel/>
 
         {/*Banners*/}
         <section className='flex flex-col items-center w-full gap-y-10'>
-          <div className='grid grid-cols-3 gap-x-10 w-3/4'>
-            <article className='flex items-center justify-center w-full h-[200px] rounded-3xl bg-marine-100 text-4xl text-white'>SMART TV</article>
-            <article className='flex items-center justify-center w-full h-[200px] rounded-3xl bg-marine-100 text-4xl text-white'>HELADERAS</article>
-            <article className='flex items-center justify-center w-full h-[200px] rounded-3xl bg-marine-100 text-4xl text-white'>CELULARES</article>
-          </div>
+          <BannersCards/>
 
-          <div className='flex items-center justify-around w-10/12 h-[70px] rounded-sm bg-marine-100 text-white'>
-            <span>Envíos a domicilio</span>
-            <span>Pagos en creditos y débitos</span>
-            <span>Centro de preguntas</span>
+          <div className='flex items-center justify-center w-3/4 h-[130px] rounded-sm bg-page-gray-light text-black font-bold xl:text-xl text-sm px-5 gap-x-5'>
+            <p className='flex gap-x-3 justify-center items-center w-full'>
+              <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
+                Icon
+              </i>
+
+              <span className='hidden md:block text-pretty'>
+                Envíos a domicilio
+              </span>
+            </p>
+            <p className='flex gap-x-3 justify-center items-center w-full'>
+              <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
+                Icon
+              </i>
+
+              <span className='hidden md:block text-pretty'>
+                Pagos en creditos y débitos
+              </span>
+            </p>
+            <p className='flex gap-x-3 justify-center items-center w-full'>
+              <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
+                Icon
+              </i>
+
+              <span className='hidden md:block text-pretty'>
+                Centro de preguntas
+              </span>
+            </p>
           </div>
         </section>
 
         {/*Categories*/}
-        <section className='w-4/5'>
+        <section className='w-4/5 mt-[-50px]'>
           <CategoriesCarousel/>
         </section>
 

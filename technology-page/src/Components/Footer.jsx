@@ -18,7 +18,9 @@ export default function Footer() {
   return(
     <div className="flex flex-col justify-center items-center">
       <section className="w-3/4 bg-page-gray-light h-20 mt-[100px] flex gap-x-5 justify-center items-center">
-        <h1 className="font-bold text-[20px]">No pierdas la oportunidad de suscribirte</h1>
+        <h1 className="font-bold text-[20px]">
+          No pierdas la oportunidad de suscribirte
+        </h1>
         <form 
           action="none"
           className="flex rounded-lg"
@@ -33,7 +35,9 @@ export default function Footer() {
               placeholder="Ingresa tu mail"
             />
           </div>
-            <p className="bg-page-lightblue text-page-white py-2 px-3 rounded-lg">Suscribir</p>
+            <button type="button" className="bg-page-lightblue text-page-white py-2 px-3 rounded-lg hover:bg-page-blue-dark duration-300">
+              Suscribir
+            </button>
         </form>
       </section>
 
@@ -66,19 +70,19 @@ export default function Footer() {
 
           <ul className="text-page-gray-light flex flex-col gap-y-1">
             <li>
-              <p>Electrodomésticos</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Electrodomésticos</a>
             </li>
             <li>
-              <p>Informática</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Informática</a>
             </li>
             <li>
-              <p>Mas Categorías</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Mas Categorías</a>
             </li>
             <li>
-              <p>Tecnología</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Tecnología</a>
             </li>
             <li>
-              <p>Sección Outlet</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Sección Outlet</a>
             </li>
           </ul>
         </article>
@@ -90,16 +94,16 @@ export default function Footer() {
 
           <ul className="text-page-gray-light flex flex-col gap-y-1">
             <li>
-              <p>Sobre nosotros</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Sobre nosotros</a>
             </li>
             <li>
-              <p>Trabajá con nosotros</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Trabajá con nosotros</a>
             </li>
             <li>
-              <p>Sucursales</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Sucursales</a>
             </li>
             <li>
-              <p>Venta a mayoristas</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Venta a mayoristas</a>
             </li>
           </ul>
         </article>
@@ -111,16 +115,16 @@ export default function Footer() {
           
           <ul className="text-page-gray-light flex flex-col gap-y-1">
             <li>
-              <p>Centro de ayuda</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Centro de ayuda</a>
             </li>
             <li>
-              <p>Garantía</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Garantía</a>
             </li>
             <li>
-              <p>Políticas de cambio y devolución</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Políticas de cambio y devolución</a>
             </li>
             <li>
-              <p>Nuestro blog</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Nuestro blog</a>
             </li>
           </ul>
         </article>
@@ -133,16 +137,16 @@ export default function Footer() {
           
           <ul className="text-page-gray-light flex flex-col gap-y-1">
             <li>
-              <p>Login</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Login</a>
             </li>
             <li>
-              <p>Registrarse</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Registrarse</a>
             </li>
             <li>
-              <p>Opciones</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Opciones</a>
             </li>
             <li>
-              <p>Mis pedidos</p>
+              <a href="#" className="hover:text-page-lightblue duration-300">Mis pedidos</a>
             </li>
           </ul> 
         </article>
@@ -152,76 +156,65 @@ export default function Footer() {
         <div className="flex gap-x-20">
           <ul 
             name={'mini-social-icons'}
-            className="flex w-full justify-between items-end text-3xl text-white"
+            className="flex w-[180px] justify-between gap-x-2 items-center text-3xl text-white"
           >
             <li>
-              <a href="#"><FaFacebook></FaFacebook></a>
+              <a href="#" className="hover:text-page-lightblue duration-300"><FaFacebook></FaFacebook></a>
             </li>
             <li>
-              <a href="#"><FaTwitter></FaTwitter></a>
+              <a href="#" className="hover:text-page-lightblue duration-300"><FaInstagram></FaInstagram></a>
             </li>
             <li>
-              <a href="#"><FaLinkedin></FaLinkedin></a>
-            </li>
-            <li>
-              <a href="#"><FaInstagram></FaInstagram></a>
-            </li>
-            <li>
-              <a href="#"><FaTiktok></FaTiktok></a>
-            </li>
-            <li>
-              <a href="#"><FaYoutube></FaYoutube></a>
+              <a href="#" className="hover:text-page-lightblue duration-300"><FaTiktok></FaTiktok></a>
             </li>
           </ul>
         
           <ul 
             name={'card-icons'}
-            className="flex text-3xl justify-between items-end w-full gap-x-2"
+            className="flex text-3xl justify-between items-end w-[300px] ml-[110px] gap-x-4"
           >
             <li>
               <img 
                 src={visaIcon} 
-                width={35}                
+                width={70}                
               />
             </li>
 
             <li>
               <img 
                 src={mastercardIcon}
-                width={35}                
+                width={70}                
               />
             </li>
 
             <li>
               <img 
                 src={americanexpressIcon}
-                width={35}                
+                width={70}                
               />
             </li>
 
             <li>
               <img 
                 src={cabalIcon}
-                width={35}
+                width={70}
               />
             </li>
 
             <li>
               <img 
                 src={naranjaIcon}
-                width={35}
+                width={70}
               />
             </li>
           </ul>
 
-          <div className="flex items-center pl-[240px] ">
-            <button className="bg-white px-4 py-1 text-sm w-[200px] text-black rounded-full">
+          <div className="flex items-center pl-[350px] ">
+            <button className="bg-white px-4 py-1 text-sm w-[240px] text-black rounded-full hover:bg-page-lightblue duration-300">
               BOTÓN DE ARREPENTIMIENTO
             </button>
           </div>
         </div>
-
-      
       </article>
 
       <section className="flex justify-center items-center w-full bg-page-gray-light">
