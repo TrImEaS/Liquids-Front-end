@@ -13,18 +13,20 @@ export default function Categories ({ containerStyle, itemStyle }) {
     'Electrodomesticos',
     'Informática',
     'Tecnologia',
-    'Outlet'
+    'Mas Categorías'
   ]
 
   return(
     <ul className={`${containerStyle} flex gap-5`}>
       {categories.map(categorie => (
         <li 
-        key={categorie} 
-        className={`${itemStyle} ${getPath(categorie)} md:hover:bg-sky-500 duration-300 py-1 px-2 md:rounded-2xl flex justify-between`}>
+          key={categorie} 
+          className={`${itemStyle} ${getPath(categorie)} md:hover:bg-sky-500 duration-300 py-1 px-2 md:rounded-2xl flex justify-between`}
+        >
           <NavLink 
-          to={`/search/:${categorie}`}
-          className={`${getPath(`/search/${categorie}`)} w-full`}>
+            to={`/search/:${categorie}`}
+            className={`${getPath(`/search/${categorie}`)} w-full`}
+          >
             {categorie}
           </NavLink>
 

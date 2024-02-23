@@ -1,11 +1,9 @@
 import React from "react"
 import { 
   FaFacebook,
-  FaTwitter, 
-  FaLinkedin, 
   FaInstagram, 
-  FaTiktok, 
-  FaYoutube,
+  FaTiktok,
+  FaAngleUp 
 } from 'react-icons/fa'
 import naranjaIcon from '../Assets/Some-icons/card-icon1.svg'
 import visaIcon from '../Assets/Some-icons/card-icon2.svg'
@@ -16,8 +14,8 @@ import { MdOutlineEmail } from "react-icons/md"
 
 export default function Footer() {
   return(
-    <div className="flex flex-col justify-center items-center">
-      <section className="w-3/4 bg-page-gray-light h-20 mt-[100px] flex gap-x-5 justify-center items-center">
+    <div className="flex flex-col justify-center items-center w-full">
+      <section className="w-3/4 bg-page-gray-light h-28 mt-[100px] flex gap-x-5 justify-center items-center max-lg:flex-wrap max-lg:w-full">
         <h1 className="font-bold text-[20px]">
           No pierdas la oportunidad de suscribirte
         </h1>
@@ -41,32 +39,39 @@ export default function Footer() {
         </form>
       </section>
 
-      <section className="grid grid-cols-5 box-border w-full pl-[100px] pt-10 bg-page-blue-normal text-white gap-x-10">
-        <article className="flex flex-col px-1 gap-y-3 ">
+      
+      {/* Mid Footer */}
+      <section className="grid grid-cols-5 max-[1500px]:grid-cols-3 w-full box-border pt-10 pl-[100px] max-[1500px]:pr-[50px] max-md:pl-0 max-md:pr-0 bg-page-blue-normal text-white gap-10">
+        <article className="
+        flex flex-col px-1 gap-5
+        max-[1500px]:col-span-5 max-[1500px]:flex-row max-[1500px]:items-center
+        max-md:flex-wrap max-md:pl-10">
           <img 
-            src="/logo-realcolor-dark.png"
-            className="bg-white rounded-3xl"
+            src="/logo-tline.png"
+            className="rounded-3xl p-4 bg-white h-[140px] w-[340px]"
           />
-          <ul className="flex flex-col w-full text-page-gray-light">
+          <ul className="flex flex-col  text-page-gray-light max-[1500px]:justify-center">
             <li>
             </li>
 
             <li>
-              <span>Informe:</span>
+              <span>Informe: lorem isupasdasda</span>
             </li>
 
             <li>
-              <span>Tel.:</span>
+              <span>Tel.: 1111111111</span>
             </li>
 
             <li>
-              <span>E-mail:</span>
+              <span>E-mail: realcolor@real-color.com.ar</span>
             </li>
           </ul>
         </article>
         
-        <article className="flex flex-col items-start gap-y-2 px-1">
-          <h1 className="font-bold">Categorías</h1>
+        <article className="flex flex-col items-start gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
+          <h1 className="font-bold">
+            Categorías
+          </h1>
 
           <ul className="text-page-gray-light flex flex-col gap-y-1">
             <li>
@@ -87,7 +92,7 @@ export default function Footer() {
           </ul>
         </article>
 
-        <article className="flex flex-col gap-y-2 px-1">
+        <article className="flex flex-col gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
           <h1 className="font-bold">
             Real Color
           </h1>
@@ -108,7 +113,7 @@ export default function Footer() {
           </ul>
         </article>
 
-        <article className="flex flex-col gap-y-2 px-1">
+        <article className="flex flex-col gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
           <h1 className="font-bold">
             Ayuda y información
           </h1>
@@ -130,7 +135,7 @@ export default function Footer() {
         </article>
 
 
-        <article className="flex flex-col gap-y-2 px-1">
+        <article className="flex flex-col gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
         <h1 className="font-bold">
           Usuarios
         </h1>
@@ -152,27 +157,34 @@ export default function Footer() {
         </article>
       </section>
 
-      <article className="flex w-full px-[100px] pt-5 pb-10 bg-page-blue-normal">
-        <div className="flex gap-x-20">
-          <ul 
-            name={'mini-social-icons'}
-            className="flex w-[180px] justify-between gap-x-2 items-center text-3xl text-white"
-          >
+
+      {/* Social icons/card icons/ button */}
+      <article className="flex w-full justify-between px-[100px] max-md:px-5 max-[1250px]:flex-wrap pt-5 max-[1500px]:pt-12 pb-10 bg-page-blue-normal">
+        <div className="flex w-full gap-x-24 items-center justify-start max-[1500px]:justify-between max-sm:flex-wrap max-sm:justify-center max-sm:gap-y-5 ">
+          {/* Social icons */}
+          <ul className="flex min-w-[180px] justify-between gap-x-2 items-center text-3xl text-white">
             <li>
-              <a href="#" className="hover:text-page-lightblue duration-300"><FaFacebook></FaFacebook></a>
+              <a href="#" className="hover:text-page-lightblue duration-300">
+                <FaFacebook/>
+              </a>
             </li>
+
             <li>
-              <a href="#" className="hover:text-page-lightblue duration-300"><FaInstagram></FaInstagram></a>
+              <a href="#" className="hover:text-page-lightblue duration-300">
+                <FaInstagram/>
+              </a>
             </li>
+
             <li>
-              <a href="#" className="hover:text-page-lightblue duration-300"><FaTiktok></FaTiktok></a>
+              <a href="#" className="hover:text-page-lightblue duration-300">
+                <FaTiktok/>
+              </a>
             </li>
           </ul>
-        
-          <ul 
-            name={'card-icons'}
-            className="flex text-3xl justify-between items-end w-[300px] ml-[110px] gap-x-4"
-          >
+
+
+          {/* Card icons */}
+          <ul className="flex text-3xl justify-between items-end min-w-[300px] w-[300px] ml-[110px] max-[1500px]:ml-0 gap-x-4">
             <li>
               <img 
                 src={visaIcon} 
@@ -208,17 +220,23 @@ export default function Footer() {
               />
             </li>
           </ul>
+        </div>
+            
+        <div className="flex w-full justify-evenly max-[1500px]:justify-end py-10 gap-x-20 max-[1250px]:justify-between px-10">
+          <button className="bg-white px-4 py-1 ml-28 max-[1500px]:ml-0 text-sm w-[300px] text-black rounded-full hover:bg-page-lightblue duration-300">
+            BOTÓN DE ARREPENTIMIENTO
+          </button>
 
-          <div className="flex items-center pl-[350px] ">
-            <button className="bg-white px-4 py-1 text-sm w-[240px] text-black rounded-full hover:bg-page-lightblue duration-300">
-              BOTÓN DE ARREPENTIMIENTO
-            </button>
-          </div>
+          <button className="hover:animate-bounce text-black rounded-full duration-300">
+            <FaAngleUp className="text-[60px] text-white"/>
+          </button>
         </div>
       </article>
 
       <section className="flex justify-center items-center w-full bg-page-gray-light">
-        <h1 className="font-bold text-gray-800 text-sm py-2">©️ 2024 REAL-COLOR SRL</h1>
+        <h1 className="font-bold text-gray-800 text-sm py-2">
+          ©️ 2024 Technology Line SRL
+        </h1>
       </section>
     </div>
   )

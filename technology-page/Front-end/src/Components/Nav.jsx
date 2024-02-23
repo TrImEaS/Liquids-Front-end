@@ -33,21 +33,22 @@ export default function Nav() {
     <nav className='z-50 flex flex-col w-full relative items-center'>
      
     {/*---Nav top---*/}
-      <section className={`grid grid-cols-2 md:grid-cols-3 justify-between items-center h-20 w-3/4 px-2 min-w-[670px]`}>
+      <section className={`grid grid-cols-2 xl:grid-cols-3 justify-between items-center h-28 w-3/4 px-2 min-w-[670px]`}>
         
       {/*Logo*/}
         <NavLink 
-          className='h-[60px] flex items-center md:justify-start'
-          to='/'>
+          className='h-[100px] flex items-center md:justify-start'
+          to='/'
+        >
           <img 
-            src="/logo-realcolor-dark.png"  
+            src="/logo-tline.png"  
             alt="company-logo"
-            className='h-full w-[200px] mt-1'/>
+            className='w-[180px]'/>
         </NavLink>
 
       {/*Search input*/}
         <form 
-          className='hidden md:flex gap-2 mr-2 justify-center bg-gray-300 rounded-full items-center px-2'
+          className='hidden xl:flex gap-2 mr-2 justify-center bg-gray-300 rounded-full items-center px-2'
           onSubmit={handleSubmit}
         >
           <FaSearch/>
@@ -78,31 +79,46 @@ export default function Nav() {
 
     
       {/*---Nav bottom Full Screen---*/}
-      <section className='hidden md:flex z-50 w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50 text-[14px]'>
-        <article className='w-3/4 flex h-[50px] items-center justify-around min-w-[640px]'>
+      <section className='hidden xl:flex z-50 w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50 text-[15px]'>
+        
+        <article className='w-3/4 flex h-[60px] items-center justify-around min-w-[640px]'>
+          
           {/*Categorias*/}
           <button 
             onClick={handleClickCategories} 
-            className='flex items-center gap-x-2 w-[200px] pl-3'>
+            className='flex items-center gap-x-2 w-[150px] pl-3'
+          >
             {
-              !categoriesMenu
-                ? <FaBars className='mb-[2.5px]'/>
-                : <FaArrowDown className='mb-[2.5px]'/>
+            !categoriesMenu
+              ? <FaBars className='mb-[2.5px]'/>
+              : <FaArrowDown className='mb-[2.5px]'/>
             }
             <span>Categorías</span>
           </button>
 
-          <section className='pl-[280px] min-w-[530px] w-full'>
+          <section className='flex justify-center min-w-[530px] w-full pr-[150px]'>
             <Categories containerStyle={'gap-x-3'}/>
           </section>
+
         </article>
       </section>
 
-      {/*---Nav bottom md sm screen---*/}
-      <section className='md:hidden flex h-[40px] w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50'>
-        <article className='flex gap-x-3 bg-gray-300 rounded-full'>
+      {/*---Nav bottom  MD screen---*/}
+      <section className='xl:hidden flex h-[60px] w-full items-center justify-center gap-x-5 bg-marine-100 text-slate-50'>
+        <button 
+          onClick={handleClickMenuNav} 
+          className='hidden md:flex items-center gap-x-2 w-[150px] pl-3'
+        >
+          {
+          !menuNav
+            ? <FaBars className='mb-[2.5px]'/>
+            : <FaArrowDown className='mb-[2.5px]'/>
+          }
+          <span>Categorías</span>
+        </button>
+        <article className='flex gap-x-3 bg-gray-300 rounded-full justify-center items-center'>
           <form 
-            className='flex items-center justify-center rounded-full text-black px-5 w-[400px]'
+            className='flex items-center justify-center rounded-full text-black px-5 w-[500px]'
             onSubmit={handleSubmit}
           >
             <FaSearch/>
@@ -122,33 +138,28 @@ export default function Nav() {
         {
           !menuNav
             ? 'hidden' 
-            : 'absolute md:hidden text-black bg-gray-300 top-[0px] left-0 min-w-[400px] min-h-[400px] flex flex-col z-50'
+            : 'absolute xl:hidden text-black bg-gray-300 top-[0px] left-0 min-w-[400px] flex flex-col z-50'
         }>
       
-      {/**Categorias**/}
-      <section className='flex flex-col h-full'>
-        <article className='w-full flex items-center justify-between gap-2 px-6 bg-marine-100 h-[70px]'>
-          {/* <FaArrowDown className='mt-4 text-white text-xl animate-bounce'></FaArrowDown> */}
-          <span className='text-white text-2xl font-semibold'>Categorías</span>
-          <button onClick={handleClickMenuNav}>
-            <FaTimes className='text-white text-2xl'/>
-          </button>
-          {/* <FaArrowDown className='mt-4 text-white text-xl animate-bounce'></FaArrowDown> */}
-        </article>
+        {/**Categorias Mobile menu**/}
+        <section className='flex flex-col h-full'>
+          <article className='w-full flex items-center justify-between gap-2 px-6 bg-marine-100 h-[70px]'>
+            <span className='text-white text-2xl font-semibold'>Categorías</span>
+            <button onClick={handleClickMenuNav}>
+              <FaTimes className='text-white text-2xl'/>
+            </button>
+          </article>
 
-        <article className='bg-gray-300 h-full'>
-          <button className='flex items-center w-full h-[80px] pl-5 border hover:text-sky-500 border-gray-400 duration-300'>
-            Todos los productos
-          </button>
-          <Categories
-            containerStyle={'flex-col gap-y-0'}
-            itemStyle={`flex last:hidden items-center w-full h-[45px] pl-10 border border-gray-400`}/>
-          <button className='flex items-center w-full h-[80px] pl-5 border hover:text-sky-500 border-gray-400 duration-300'>
-            Outlet
-          </button>
-        </article>
-      </section>
-    </ul>
+          <article className='bg-gray-300 h-full'>
+            <button className='flex items-center w-full h-[80px] pl-5 border hover:text-sky-500 border-gray-400 duration-300'>
+              Todos los productos
+            </button>
+            <Categories
+              containerStyle={'flex-col gap-y-0'}
+              itemStyle={`flex items-center w-full h-full pl-10 border border-gray-400`}/>
+          </article>
+        </section>
+      </ul>
 
     </nav>
   )

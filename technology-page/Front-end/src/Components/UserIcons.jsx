@@ -6,7 +6,7 @@ import ProductsCarousel from "./ProductsCarousel";
 export default function UserIcons({ countValue }) {
   const location = useLocation();
   const [cartCount, setCartCount] = useState(0)
-  const isScreenMd = window.innerWidth >= 768;
+  const isScreenMd = window.innerWidth >= 1280;
   
   const addItemCart = () => {
     setCartCount(countValue)
@@ -18,8 +18,8 @@ export default function UserIcons({ countValue }) {
       to='/login'
       className={` ${location.pathname === '/login' ? 'isActive' : ''} text-[10px] font-semibold hover:text-sky-500 rounded-lg p-1 duration-300`}>
         <p className="flex flex-col items-center gap-y-2">
-          <FaUser className="md:text-lg text-2xl"></FaUser>
-          <span className="hidden md:inline-block">
+          <FaUser className="xl:text-lg text-2xl"></FaUser>
+          <span className="hidden xl:inline-block">
             INGRESAR
           </span>
         </p>
@@ -30,17 +30,18 @@ export default function UserIcons({ countValue }) {
       className={` ${location.pathname === '/favoritos' ? 'isActive' : ''} text-[10px] font-bold hover:text-sky-500 rounded-lg p-1 duration-300`} 
       >
         <p className="flex flex-col items-center gap-y-2">
-          <FaHeart className="md:text-lg text-2xl"></FaHeart>
-          <span className="hidden md:inline-block">
+          <FaHeart className="xl:text-lg text-2xl"></FaHeart>
+          <span className="hidden xl:inline-block">
             FAVORITOS
           </span>
         </p>
       </NavLink>
 
       <NavLink 
-      to='/carrito'
-      onClick={addItemCart}
-      className={` ${location.pathname === '/carrito' ? 'isActive' : ''} text-[10px] group font-bold hover:text-sky-500 rounded-lg p-1 duration-300`}>
+        to='/carrito'
+        onClick={addItemCart}
+        className={` ${location.pathname === '/carrito' ? 'isActive' : ''} text-[10px] group font-bold hover:text-sky-500 rounded-lg p-1 duration-300`}
+      >
         <p className="group flex flex-col relative items-center gap-y-2">
           <span className=
             {
@@ -50,8 +51,8 @@ export default function UserIcons({ countValue }) {
             }>
             {cartCount}
           </span>
-          <FaShoppingCart className="md:text-lg text-2xl"></FaShoppingCart>
-          <span className="hidden md:inline-block">
+          <FaShoppingCart className=":text-lg text-2xl"></FaShoppingCart>
+          <span className="hidden xl:inline-block">
             CARRITO
           </span>
         </p>

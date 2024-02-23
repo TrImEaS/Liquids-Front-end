@@ -90,7 +90,7 @@ export default function ProductsCarousel () {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       }
@@ -98,7 +98,7 @@ export default function ProductsCarousel () {
   }
 
   return(
-      <Slider className='pr-5 ' {...settings}>
+      <Slider className='pr-5 duration-200' {...settings}>
         {someProducts.map((product, index) => (
         <ProductCard
           key={product.ID}

@@ -36,15 +36,11 @@ export default function ProductsCarousel () {
     )
   }
 
-  // nextArrow: <NextArrow/>,
-  // prevArrow: <PrevArrow/>,
-
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 7,
-    slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
@@ -72,75 +68,75 @@ export default function ProductsCarousel () {
   }
 
   return(
-      <Slider {...settings}>
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image1 ? image1 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>AURICULARES</span></p>
-          </article>
-        </div>
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image2 ? image2 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>CELULARES</span></p>
-          </article>
-        </div>
+    <Slider {...settings}>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image1 ? image1 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p><span>AURICULARES</span></p>
+        </article>
+      </div>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image2 ? image2 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>CELULARES</span></p>
+        </article>
+      </div>
 
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image3 ? image3 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>CUIDADO PERSONAL</span></p>
-          </article>
-        </div>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image3 ? image3 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>CUIDADO PERSONAL</span></p>
+        </article>
+      </div>
 
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image4 ? image4 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>LAVADO</span></p>
-          </article>
-        </div>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image4 ? image4 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>LAVADO</span></p>
+        </article>
+      </div>
 
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image5 ? image5 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>PEQUEÑOS ELECTRO</span></p>
-          </article>
-        </div>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image5 ? image5 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>PEQUEÑOS ELECTRO</span></p>
+        </article>
+      </div>
 
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image6 ? image6 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>PARLANTES</span></p>
-          </article>
-        </div>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image6 ? image6 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>PARLANTES</span></p>
+        </article>
+      </div>
 
-        <div>
-          <article className='flex flex-col items-center justify-center gap-y-2'>
-            <img 
-              src={image7 ? image7 : defaultImage} 
-              className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
-            </img>
-            <p><span>VENTILADORES</span></p>
-          </article>
-        </div>
-      </Slider>
+      <div>
+        <article className='flex flex-col items-center justify-center gap-y-2'>
+          <img 
+            src={image7 ? image7 : defaultImage} 
+            className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
+          </img>
+          <p className='text-center'><span>VENTILADORES</span></p>
+        </article>
+      </div>
+    </Slider>
   )}
 

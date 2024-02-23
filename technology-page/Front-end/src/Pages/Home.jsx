@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import BannerCarousel from '../Components/BannerCarousel'
 import BannersCards from '../Components/BannersCards'
 import CategoriesCarousel from '../Components/CategoriesCarousel'
+import homeicon1 from '../Assets/Some-icons/home-icon1.svg'
+import homeicon2 from '../Assets/Some-icons/home-icon3.svg'
+import homeicon3 from '../Assets/Some-icons/home-icon2.svg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 export default function Home() {
 
   return (
-      <div name='home' className='flex flex-col items-center gap-10 min-h-screen h-full w-full gap-y-24'>
+    <>
+      <div 
+        name='home' 
+        className={`flex flex-col items-center gap-10 min-h-screen h-full w-full gap-y-24`}>
      
         {/*Carrusel/Banner*/}
         <BannerCarousel/>
@@ -20,7 +26,7 @@ export default function Home() {
           <div className='flex items-center justify-center w-3/4 h-[130px] rounded-sm bg-page-gray-light text-black font-bold xl:text-xl text-sm px-5 gap-x-5'>
             <p className='flex gap-x-3 justify-center items-center w-full'>
               <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
-                Icon
+                <img src={homeicon1}/>
               </i>
 
               <span className='hidden md:block text-pretty'>
@@ -29,7 +35,7 @@ export default function Home() {
             </p>
             <p className='flex gap-x-3 justify-center items-center w-full'>
               <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
-                Icon
+                <img src={homeicon2}/>
               </i>
 
               <span className='hidden md:block text-pretty'>
@@ -38,7 +44,7 @@ export default function Home() {
             </p>
             <p className='flex gap-x-3 justify-center items-center w-full'>
               <i className='flex justify-center items-center border-2 border-black rounded-full xl:min-w-[100px] xl:min-h-[100px] min-w-[80px] min-h-[80px]'>
-                Icon
+                <img src={homeicon3}/>
               </i>
 
               <span className='hidden md:block text-pretty'>
@@ -78,5 +84,6 @@ export default function Home() {
         </section>
         
       </div>
+    </>
   )
 }
