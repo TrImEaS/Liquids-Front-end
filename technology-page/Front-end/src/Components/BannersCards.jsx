@@ -5,7 +5,7 @@ import bannerCard_3 from '../Assets/BannerCards-images/banner-3.jpg'
 
 export default function BannersCards() {
   return (
-    <div className='flex flex-wrap justify-center items-center gap-8 w-2/3 mt-[-70px]'>
+    <div className='flex flex-wrap justify-center items-center gap-8 w-2/3 mt-[60px]'>
      
       <article className='flex relative items-center justify-center group text-4xl text-white'>
         <button className="absolute bottom-2 left-5 w-32 group text-lg rounded bg-page-blue-normal max-sm:w-20 max-sm:text-sm max-sm:left-3 duration-500">

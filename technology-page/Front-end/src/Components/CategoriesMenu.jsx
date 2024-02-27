@@ -90,7 +90,7 @@ export default function CategoriesMenu () {
                     className='flex flex-wrap justify-between py-5'
                   >
                     <li className='hover:text-page-lightblue duration-300'>
-                      <NavLink to={`/search/:${category.name.toLowerCase()}`} className={'font-semibold'}>
+                      <NavLink to={`/search/${category.name.toLowerCase()}`} className={'font-semibold'}>
                         {category.name.toUpperCase()}
                       </NavLink>
                     </li>
@@ -103,7 +103,7 @@ export default function CategoriesMenu () {
                       key={subcategory.name} 
                       className='hover:text-page-lightblue text-xs duration-300'
                     >
-                      <NavLink to={`/search/:${category.name}/${subcategory.name}`}>
+                      <NavLink to={`/search/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
                         {subcategory.name}
                       </NavLink>
                     </li>
@@ -120,7 +120,7 @@ export default function CategoriesMenu () {
         <ul className='flex'>
           {products.categories.map(category =>(
             <li key={category.name.toLowerCase()} className='hover:bg-page-lightblue rounded-full p-1 px-2 duration-300'>
-              <NavLink to={`/search/:${category.name.toLowerCase()}`}>
+              <NavLink to={`/search/${category.name.toLowerCase()}`}>
                 {category.name.charAt(0).toUpperCase() + category.name.slice(1).toLowerCase()}
               </NavLink>
             </li>

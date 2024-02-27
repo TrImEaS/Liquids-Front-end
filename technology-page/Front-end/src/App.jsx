@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { Home, Error, Search } from './Pages/Routes.jsx'
 import { FaWhatsapp } from "react-icons/fa"
+import BannerCarousel from './Components/BannerCarousel.jsx'
 import Nav from './Components/Nav'
 import Footer from "./Components/Footer.jsx"
 function App() {
@@ -14,6 +15,7 @@ function App() {
     demoBtn ?
       <main className="flex flex-col items-center font-body justify-between bg-white text-black min-h-screen min-w-[390px] h-full p-0 m-0">
         <Nav></Nav>
+        <BannerCarousel/>
         <Routes>
           <Route
             path="/"

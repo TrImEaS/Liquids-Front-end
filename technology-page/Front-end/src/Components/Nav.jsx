@@ -19,10 +19,8 @@ export default function Nav() {
 
   return (
     <nav className='z-50 flex flex-col w-full relative items-center'>
-     
     {/*---Nav top---*/}
       <section className={`grid grid-cols-2 xl:grid-cols-3 justify-between items-center h-28 w-3/4 px-2 max-md:w-full`}>
-        
       {/*Logo*/}
         <NavLink 
           className='h-[100px] flex items-center max-xl:justify-center'
