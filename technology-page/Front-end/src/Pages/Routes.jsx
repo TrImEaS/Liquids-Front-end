@@ -4,6 +4,7 @@ import Search from "./Search"
 import Login from "./Login"
 import Cart from "./Cart"
 import Favorites from "./Favorites"
+import Products from './Products'
 
 
 export { 
@@ -12,5 +13,6 @@ export {
   Search, 
   Login, 
   Cart, 
-  Favorites 
+  Favorites,
+  Products
 }

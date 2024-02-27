@@ -14,8 +14,9 @@ export default function UserIcons({ countValue }) {
   return(
     <>
       <NavLink 
-        to='/login'
-        className={` ${location.pathname === '/login' ? 'isActive' : ''} text-[10px] font-semibold hover:text-sky-500 rounded-lg p-1 duration-300`}
+        to=''
+        className={`group text-[10px] font-bold rounded-lg p-1 text-[#EBEBE4]`}
+        // className={` ${location.pathname === '/login' ? 'isActive' : ''}  text-[10px] font-semibold hover:text-sky-500 rounded-lg p-1 duration-300`}
       >
         <p className="flex flex-col items-center gap-y-2">
           <FaUser className="xl:text-lg text-2xl"></FaUser>
@@ -23,11 +24,13 @@ export default function UserIcons({ countValue }) {
             INGRESAR
           </span>
         </p>
+        <span className="group-hover:text-black absolute top-[75px] right-5 z-50 text-transparent duration-1000">Funcion no disponible, disculpe las molestias.</span>
       </NavLink>
 
       <NavLink 
-        to='/favoritos'
-        className={` ${location.pathname === '/favoritos' ? 'isActive' : ''} text-[10px] font-bold hover:text-sky-500 rounded-lg p-1 duration-300`} 
+        to=''
+        className={`group text-[10px] font-bold rounded-lg p-1 text-[#EBEBE4]`}
+        // className={` ${location.pathname === '/favoritos' ? 'isActive' : ''}  text-[10px] font-bold hover:text-sky-500 rounded-lg p-1 duration-300`} 
       >
         <p className="flex flex-col items-center gap-y-2">
           <FaHeart className="xl:text-lg text-2xl"></FaHeart>
@@ -35,19 +38,21 @@ export default function UserIcons({ countValue }) {
             FAVORITOS
           </span>
         </p>
+        <span className="group-hover:text-black absolute top-[75px] right-5 z-50 text-transparent duration-1000">Funcion no disponible, disculpe las molestias.</span>
       </NavLink>
 
       <NavLink 
-        to='/carrito'
+        to=''
         onClick={addItemCart}
-        className={` ${location.pathname === '/carrito' ? 'isActive' : ''} text-[10px] group font-bold hover:text-sky-500 rounded-lg p-1 duration-300`}
+        className={`group text-[10px] font-bold rounded-lg p-1 text-[#EBEBE4]`}
+        // className={` ${location.pathname === '/carrito' ? 'isActive' : ''}  text-[10px] group font-bold hover:text-sky-500 rounded-lg p-1 duration-300`}
       >
         <p className="group flex flex-col relative items-center gap-y-2">
           <span className=
             {
               isScreenMd 
-                ? 'absolute text-center bottom-[28px] right-[0px] w-[20px] h-[20px] border-2 border-black rounded-full group-hover:border-sky-500 duration-300'
-                : 'absolute text-center bottom-[12px] right-[-10px] w-[20px] h-[20px] border-2 border-black rounded-full group-hover:border-sky-500 duration-300'
+                ? 'absolute text-center bottom-[28px] right-[0px] w-[20px] h-[20px] border-2 border-[#EBEBE4] rounded-full'//group-hover:border-sky-500 duration-300 border-black
+                : 'absolute text-center bottom-[12px] right-[-10px] w-[20px] h-[20px] border-2 border-[#EBEBE4] rounded-full'//group-hover:border-sky-500 duration-300 border-black
             }>
             {cartCount}
           </span>
@@ -56,6 +61,7 @@ export default function UserIcons({ countValue }) {
             CARRITO
           </span>
         </p>
+        <span className="group-hover:text-black absolute top-[75px] right-5 z-50 text-transparent duration-1000">Funcion no disponible, disculpe las molestias.</span>
       </NavLink>
     </>
   )

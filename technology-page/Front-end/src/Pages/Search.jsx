@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa'
+import BannerCarousel from '../Components/BannerCarousel.jsx'
 import ProductsSearch from '../Components/ProductsSearch'
 
 export default function Search ({ history }) {
-
-  const [query, setQuery] = useState('')
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
@@ -19,10 +18,6 @@ export default function Search ({ history }) {
   const handleToggleBrand = () => setIsBrandOpen(!isBrandOpen);
   const handleTogglePrice = () => setIsPriceOpen(!isPriceOpen);
   const handleSelectPrice = (e) => setSelectPrice(parseInt(e.target.value))
-  const handleSearch = (e) => {
-    e.preventDefault()
-    history.push(`/search/${query}`)
-  }
 
   return (
     <section className="flex flex-col w-3/4 py-10">
@@ -36,9 +31,18 @@ export default function Search ({ history }) {
           <select 
             name="filter" 
             className="px-2 py-1 border-2 border-black rounded-lg">
-            <option value="">Orden por defecto</option>
-            <option value="">Menor precio</option>
-            <option value="">Mayor precio</option>
+            <option 
+              value="default">
+              Orden por defecto
+            </option>
+            <option 
+              value="min">
+              Menor precio
+            </option>
+            <option 
+              value="max">
+              Mayor precio
+            </option>
           </select>
         </article>
       </header>

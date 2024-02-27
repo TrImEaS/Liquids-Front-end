@@ -9,35 +9,35 @@ export default function CategoriesMenu () {
   const procesarDatos = (productos) => {
     const resultado = {
       categories: [],
-    };
+    }
   
     productos.forEach((producto) => {
-      const { category, subcategory, brand } = producto;
+      const { cat_desc, subcat_desc, brand_desc } = producto
   
       // Verifica si la categoría ya existe en el resultado
       const categoriaExistente = resultado.categories.find(
-        (cat) => cat.name === category
+        (cat) => cat.name === cat_desc
       )
   
       if (!categoriaExistente) {
         const nuevaCategoria = {
-          name: category,
+          name: cat_desc,
           subcategories: [],
         }
-        resultado.categories.push(nuevaCategoria)
+        resultado.categories.push(nuevaCategoria);
       }
   
       // Verifica si la subcategoría ya existe en la categoría
       const categoriaActual = resultado.categories.find(
-        (cat) => cat.name === category
+        (cat) => cat.name === cat_desc
       )
       const subcategoriaExistente = categoriaActual.subcategories.find(
-        (subcat) => subcat.name === subcategory
-      );
+        (subcat) => subcat.name === subcat_desc
+      )
   
       if (!subcategoriaExistente) {
         const nuevaSubcategoria = {
-          name: subcategory,
+          name: subcat_desc,
           brands: [],
         }
         categoriaActual.subcategories.push(nuevaSubcategoria);
@@ -45,13 +45,14 @@ export default function CategoriesMenu () {
   
       // Agrega la marca a la subcategoría
       const subcategoriaActual = categoriaActual.subcategories.find(
-        (subcat) => subcat.name === subcategory
+        (subcat) => subcat.name === subcat_desc
       )
-      subcategoriaActual.brands.push(brand);
+      subcategoriaActual.brands.push(brand_desc);
     })
   
     return resultado;
   }
+  
   const [categoriesHideMenu, setCategoriesHideMenu] = useState(false)
   
   const products = procesarDatos(jsonproducts); 
@@ -78,7 +79,10 @@ export default function CategoriesMenu () {
             <section className='grid grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 justify-center gap-x-10 gap-y-2 text-black'>
               
               <div className='w-full h-12 col-span-3 max-xl:col-span-2 max-md:col-span-1 border-b-2 border-page-blue-dark'>
-                <NavLink className={'hover:text-page-lightblue max-sm:text-xl text-2xl duration-300 font-bold'}>
+                <NavLink 
+                  to={'/search'} 
+                  onClick={handleClickCategories} 
+                  className={'hover:text-page-lightblue max-sm:text-xl text-2xl duration-300 font-bold'}>
                   Todos los productos
                 </NavLink>
               </div>
@@ -90,7 +94,10 @@ export default function CategoriesMenu () {
                     className='flex flex-wrap justify-between py-5'
                   >
                     <li className='hover:text-page-lightblue duration-300'>
-                      <NavLink to={`/search/${category.name.toLowerCase()}`} className={'font-semibold'}>
+                      <NavLink 
+                        to={`/search/${category.name.toLowerCase()}`} 
+                        className={'font-semibold'}
+                        onClick={handleClickCategories}>
                         {category.name.toUpperCase()}
                       </NavLink>
                     </li>
@@ -103,7 +110,9 @@ export default function CategoriesMenu () {
                       key={subcategory.name} 
                       className='hover:text-page-lightblue text-xs duration-300'
                     >
-                      <NavLink to={`/search/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
+                      <NavLink 
+                        to={`/search/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}
+                        onClick={handleClickCategories}>
                         {subcategory.name}
                       </NavLink>
                     </li>
@@ -120,7 +129,8 @@ export default function CategoriesMenu () {
         <ul className='flex'>
           {products.categories.map(category =>(
             <li key={category.name.toLowerCase()} className='hover:bg-page-lightblue rounded-full p-1 px-2 duration-300'>
-              <NavLink to={`/search/${category.name.toLowerCase()}`}>
+              <NavLink 
+                to={`/search/${category.name.toLowerCase()}`}>
                 {category.name.charAt(0).toUpperCase() + category.name.slice(1).toLowerCase()}
               </NavLink>
             </li>

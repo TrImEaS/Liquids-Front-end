@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import BannersCards from '../Components/BannersCards'
+import BannerCarousel from '../Components/BannerCarousel.jsx'
 import CategoriesCarousel from '../Components/CategoriesCarousel'
 import homeicon1 from '../Assets/Some-icons/home-icon1.svg'
 import homeicon2 from '../Assets/Some-icons/home-icon3.svg'
@@ -14,7 +15,7 @@ export default function Home() {
       <div 
         name='home' 
         className={`flex flex-col items-center gap-10 min-h-screen h-full w-full gap-y-24`}>
-
+        <BannerCarousel></BannerCarousel>
         {/*Banners*/}
         <section className='flex flex-col items-center w-full gap-y-10'>
           <BannersCards/>
@@ -55,27 +56,33 @@ export default function Home() {
         </section>
 
         {/*Products sale carousel*/}
-        <section className='w-3/4'>
-          <h1 className='font-bold text-3xl'>
+        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
+          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
             OFERTAS
           </h1>
-          <ProductsCarousel/>
+          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
+            <ProductsCarousel/>
+          </div>
         </section>
 
         {/*Products news carousel*/}
-        <section className='w-3/4'>
-          <h1 className='font-bold text-3xl'>
+        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
+          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
             NOVEDADES
-          </h1>
-          <ProductsCarousel/>
+          </h1> 
+          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
+            <ProductsCarousel/>
+          </div>
         </section>
 
         {/*Products recomendations carousel*/}
-        <section className='w-3/4'>
-          <h1 className='font-bold text-3xl'>
+        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
+          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
             TE RECOMENDAMOS
           </h1>
-          <ProductsCarousel/>
+          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
+            <ProductsCarousel/>
+          </div>
         </section>
         
       </div>

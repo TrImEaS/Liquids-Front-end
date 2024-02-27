@@ -8,7 +8,13 @@ const maxPageButtons = 5
 export default function ProductsSearch() {
   const [currentPage, setCurrentPage] = useState(1)
 
-  const totalPages = Math.ceil(products.length / productsPerPage)
+  const someProducts = [] 
+
+  const handlePageChange = (newPage) => setCurrentPage(newPage)
+  
+  products.map(product => { if (product["DEPO. TOTAL DISPO."] > 3) someProducts.push(product) })
+  
+  const totalPages = Math.ceil(someProducts.length / productsPerPage)
 
   const getPagesToShow = () => {
     const pages = []
@@ -29,20 +35,18 @@ export default function ProductsSearch() {
     return pages
   }
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  }
 
   return (
     <section className="flex flex-col w-full h-full">
       {/* Renderizar productos */}
       <div className="flex flex-wrap w-full justify-around gap-10">
-        {products.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage).map((product) => (
+        {someProducts.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage).map(
+        (product) => (
           <ProductCard
             key={product.ID}
             img={''}
-            price={product.price}
-            name={product.description}
+            price={product['L. Precios C/Imp']}
+            name={product.item_desc}
           />
         ))}
       </div>

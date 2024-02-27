@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import UserIcons from './UserIcons'
 import CategoriesMenu from './CategoriesMenu'
-import { FaBars, FaSearch, FaTimes } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
 
 export default function Nav() {
-  const [menuNav, setMenuNav] = useState(false)
   const [keyword, setKeyword] = useState('')
+  
+  const navigate = useNavigate()
 
-  const handleClickMenuNav = () => setMenuNav(!menuNav)
-    
   const handleChange = e => setKeyword(e.target.value)
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(keyword)
+    navigate(`/search/${keyword}`)
   }
 
   return (
@@ -55,7 +54,7 @@ export default function Nav() {
       {/*---Nav bottom Full Screen---*/}
       <section className='hidden xl:flex z-50 w-full items-center justify-around gap-x-5 bg-marine-100 text-slate-50 text-[15px]'>
         <article className='w-3/4 flex h-[60px] items-center justify-around min-w-[640px]'>
-         <CategoriesMenu/>
+          <CategoriesMenu/>
         </article>
       </section>
 
