@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaAngleRight } from "react-icons/fa";
-import { FaAngleLeft } from "react-icons/fa";
+import { NavLink } from 'react-router-dom'
+import { FaAngleRight } from "react-icons/fa"
+import { FaAngleLeft } from "react-icons/fa"
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -12,6 +13,8 @@ import image5 from '../Assets/CategoriesCarousel-images/LAB146.jpg'
 import image6 from '../Assets/CategoriesCarousel-images/LAB535_A.jpg'
 import image7 from '../Assets/CategoriesCarousel-images/PAR4299-2.jpg'
 import defaultimage from '../Assets/CategoriesCarousel-images/default.webp'
+
+
 export default function ProductsCarousel () {
 
   const NextArrow = (props) =>{
@@ -70,72 +73,73 @@ export default function ProductsCarousel () {
   return(
     <Slider {...settings}>
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image1 ? image1 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p><span>AURICULARES</span></p>
-        </article>
+        </NavLink>
       </div>
+
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image2 ? image2 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>CELULARES</span></p>
-        </article>
+        </NavLink>
       </div>
 
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image3 ? image3 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>CUIDADO PERSONAL</span></p>
-        </article>
+        </NavLink>
       </div>
 
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image4 ? image4 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>LAVADO</span></p>
-        </article>
+        </NavLink>
       </div>
 
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image5 ? image5 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>PEQUEÑOS ELECTRO</span></p>
-        </article>
+        </NavLink>
       </div>
 
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image6 ? image6 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>PARLANTES</span></p>
-        </article>
+        </NavLink>
       </div>
 
       <div>
-        <article className='flex flex-col items-center justify-center gap-y-2'>
+        <NavLink to={'/search/:auriculares'} className='flex flex-col items-center justify-center gap-y-2 hover:drop-shadow-xl duration-300 cursor-pointer'>
           <img 
             src={image7 ? image7 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
           <p className='text-center'><span>VENTILADORES</span></p>
-        </article>
+        </NavLink>
       </div>
     </Slider>
   )}

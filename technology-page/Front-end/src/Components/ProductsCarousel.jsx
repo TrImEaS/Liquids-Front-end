@@ -12,20 +12,20 @@ export default function ProductsCarousel () {
   const basePath = isDevelopment ? '../Assets' : 'https://www.technologyline.com.ar'
   const [images, setImages] = useState([])
   
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch(`${basePath}/products-images/`)
-        const data = await response.json()
-        setImages(data.images)
-        console.log(data.images)
-      } catch (error) {
-        console.error('Error fetching images:', error)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const response = await fetch(`${basePath}/products-images/`)
+  //       const data = await response.json()
+  //       setImages(data.images)
+  //       console.log(data.images)
+  //     } catch (error) {
+  //       console.error('Error fetching images:', error)
+  //     }
+  //   }
   
-    fetchImages()
-  }, [basePath])
+  //   fetchImages()
+  // }, [basePath])
 
 
   const someProducts = products.slice(1, 11)

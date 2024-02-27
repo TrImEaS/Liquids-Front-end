@@ -12,6 +12,7 @@ export default function BannerCarousel() {
     <section>
       <Carousel 
         autoPlay={5000}
+        infiniteLoop
         stopOnHover
         transitionTime={500}
         showThumbs={0}
@@ -27,10 +28,16 @@ export default function BannerCarousel() {
           </div>  
         ))} */}
         <div>
-          <img src={banner1} alt="" />
+          <img 
+            src={banner1}
+            className="min-h-[100px] object-fill"
+          />
         </div>
         <div>
-          <img src={banner2} alt="" />
+          <img 
+            src={banner2}
+            className="min-h-[100px] object-fill"
+          />
         </div>
         {/* <div>
           <img src={banner3} alt="" />

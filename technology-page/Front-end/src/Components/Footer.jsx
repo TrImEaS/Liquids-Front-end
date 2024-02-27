@@ -15,8 +15,10 @@ import { MdOutlineEmail } from "react-icons/md"
 export default function Footer() {
   return(
     <div className="flex flex-col justify-center items-center w-full">
+      
+      {/*Top Footer*/}
       <section className="w-3/4 bg-page-gray-light h-28 mt-[100px] flex gap-x-5 justify-center items-center max-lg:flex-wrap max-lg:w-full">
-        <h1 className="font-bold text-[20px]">
+        <h1 className="font-bold text-[20px] max-sm:text-[16px]">
           No pierdas la oportunidad de suscribirte
         </h1>
         <form 
@@ -38,10 +40,9 @@ export default function Footer() {
             </button>
         </form>
       </section>
-
       
       {/* Mid Footer */}
-      <section className="grid grid-cols-5 max-[1500px]:grid-cols-3 w-full box-border pt-10 pl-[100px] max-[1500px]:pr-[50px] max-md:pl-0 max-md:pr-0 bg-page-blue-normal text-white gap-10">
+      <section className="grid grid-cols-5 max-[1500px]:grid-cols-3 w-full box-border pt-10 pl-[100px] max-[1500px]:pr-[50px] max-md:pl-0 max-md:pr-0 bg-page-blue-normal text-white gap-10 py-10">
         <article className="
         flex flex-col px-1 gap-5
         max-[1500px]:col-span-5 max-[1500px]:flex-row max-[1500px]:items-center
@@ -223,12 +224,12 @@ export default function Footer() {
         </div>
             
         <div className="flex w-full justify-evenly max-[1500px]:justify-end py-10 gap-x-20 max-[1250px]:justify-between px-10">
-          <button className="bg-white px-4 py-1 ml-28 max-[1500px]:ml-0 text-sm w-[300px] text-black rounded-full hover:bg-page-lightblue duration-300">
+          <button className="bg-white px-4 py-1 ml-28 max-[1500px]:ml-0 text-sm w-[300px] text-black rounded-full font-semibold hover:bg-page-lightblue duration-300">
             BOTÓN DE ARREPENTIMIENTO
           </button>
 
-          <button className="hover:animate-bounce text-black rounded-full duration-300">
-            <FaAngleUp className="text-[60px] text-white"/>
+          <button className="group text-black flex justify-center items-center rounded-xl w-[70px] border-2 ">
+            <FaAngleUp className="text-[50px] group-hover:animate-bounce text-white duration-300"/>
           </button>
         </div>
       </article>

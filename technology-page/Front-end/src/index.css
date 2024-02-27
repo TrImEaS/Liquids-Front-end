@@ -14,5 +14,5 @@
 }
 
 #btn:hover {
-  box-shadow: white 0 0 0 10px;
+  filter: drop-shadow(white 1px 1px 15px ) ;
 }

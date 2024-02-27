@@ -10,8 +10,8 @@ export default function Search ({ history }) {
   }
 
   return (
-      <>
-      <h1>Search</h1>
-      </>
+    <>
+     <h1>Search</h1>
+    </>
   )    
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import BannerCarousel from '../Components/BannerCarousel'
 import BannersCards from '../Components/BannersCards'
