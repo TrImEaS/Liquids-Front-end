@@ -44,7 +44,7 @@ export default function ProductsSearch() {
         (product) => (
           <ProductCard
             key={product.ID}
-            img={''}
+            img={product.item_code}
             price={product['L. Precios C/Imp']}
             name={product.item_desc}
           />

@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import Nav from './Components/Nav'
 import Footer from "./Components/Footer.jsx"
 function App() {
-  const [demoBtn, setDemoBtn] = useState(true)
+  const [demoBtn, setDemoBtn] = useState(false)
   const handleclick = () => setDemoBtn(!demoBtn)
 
   return (

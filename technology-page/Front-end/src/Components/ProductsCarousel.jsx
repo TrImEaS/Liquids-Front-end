@@ -77,7 +77,7 @@ export default function ProductsCarousel() {
         {visibleProducts.map((product, index) => (
           <ProductCard
             key={product.ID}
-            img={images[index] || ''}
+            img={product.item_code}
             price={product['L. Precios C/Imp']}
             name={product.item_desc}
           ></ProductCard>

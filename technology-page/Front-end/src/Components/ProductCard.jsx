@@ -10,7 +10,7 @@ export default function ProductCard({ img, price, name, addItemCart }) {
     <section className="flex flex-col box-border items-center justify-between bg-white p-2 shadow-xl hover:shadow-page-blue-normal hover:shadow-lg duration-500 border-2 rounded-xl hover:cursor-pointer min-h-[400px] h-[400px] w-[280px] min-w-[280px]">
       <header className="w-full h-[50%] box-border">
         <img 
-          src={'https://http2.mlstatic.com/D_NQ_NP_622122-MLU74089433592_012024-O.webp'} 
+          src={`https://www.technologyline.com.ar/products-images/${img}.jpg`} 
           // src={img} 
           alt="Product-Card" 
           className="w-full h-full" 
