@@ -46,3 +46,7 @@ const employeeSchema = z.object({
 export default function validateEmployee(object) {
   return employeeSchema.safeParse(object)
 }
+
+export function validatePartialEmployee(input) {
+  return employeeSchema.partial().safeParse(input)
+}
