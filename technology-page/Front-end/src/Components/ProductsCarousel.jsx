@@ -1,117 +1,100 @@
-import React, { useEffect, useState } from 'react'
-import { FaAngleRight } from "react-icons/fa";
-import { FaAngleLeft } from "react-icons/fa";
-import ProductCard from './ProductCard'
-import Slider from 'react-slick'
-import products from '../Data/products.json'
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import React, { useState, useEffect } from 'react';
+import ProductCard from './ProductCard';
+import products from '../Data/products.json';
 
-export default function ProductsCarousel () {
-  const isDevelopment = process.env.NODE_ENV === 'development'
-  const basePath = isDevelopment ? '../Assets' : 'https://www.technologyline.com.ar'
-  const [images, setImages] = useState([])
-  
-  // useEffect(() => {
-  //   const fetchImages = async () => {
-  //     try {
-  //       const response = await fetch(`${basePath}/products-images/`)
-  //       const data = await response.json()
-  //       setImages(data.images)
-  //       console.log(data.images)
-  //     } catch (error) {
-  //       console.error('Error fetching images:', error)
-  //     }
-  //   }
-  
-  //   fetchImages()
-  // }, [basePath])
+//Los dots si el numero de productos que se muestra es impar, se rompe al final
+// si es par no se rompe, arreglar en futuro C:
 
+export default function ProductsCarousel() {
+  const [images, setImages] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [numberOfProducts, setNumberOfProducts] = useState(5);
 
-  const someProducts = products.slice(1, 11)
+  const newProducts = products.filter((product) => product['DEPO. TOTAL DISPO.'] > 3);
 
+  const someProducts = newProducts.slice(1, 21)
 
-  const NextArrow = (props) =>{
-    const { onClick, style, className } = props 
-    return (
-        <FaAngleRight 
-          onClick={onClick} 
-          style={{...style, color: 'white', background: 'black', borderRadius: '100%'}} 
-          className={className}
-        />
-    )
-  }
-  
-  const PrevArrow = (props) =>{
-    const { onClick, style, className } = props 
-    return (
-        <FaAngleLeft 
-          onClick={onClick} 
-          style={{...style, color: 'white', background: 'black', borderRadius: '100%'}} 
-          className={className}
-        />
-    )
+  const visibleProducts = someProducts.slice(currentIndex, currentIndex + numberOfProducts);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - numberOfProducts, 0));
   }
 
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>,
-    responsive: [
-      {
-        breakpoint: 1700,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          dots: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          nextArrow: false,
-          prevArrow: false,
-        }
-      },
-      {
-        breakpoint: 650,
-        settings: {
-          dots: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          nextArrow: false,
-          prevArrow: false,
-        }
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + numberOfProducts, someProducts.length - numberOfProducts));
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth >= 1920) {
+        setNumberOfProducts(5);
+      } else if (screenWidth >= 1680) {
+        setNumberOfProducts(4);
+      } else if (screenWidth >= 1280) {
+        setNumberOfProducts(3);
+      } else if (screenWidth >= 868) {
+        setNumberOfProducts(2);
+      } else {
+        setNumberOfProducts(1);
       }
-    ]
-  }
+    }
 
-  return(
-      <Slider className='duration-200' {...settings}>
-        {someProducts.map((product, index) => (
-        <ProductCard
-          key={product.ID}
-          img={images[index] || ''}
-          price={product['L. Precios C/Imp']}
-          name={product.item_desc}
-        ></ProductCard>
+    // Ajusta el número de productos al cargar inicialmente
+    handleResize()
+
+    // Agrega un listener para el evento de cambio de tamaño de la ventana
+    window.addEventListener('resize', handleResize);
+
+    // Limpia el listener al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [])
+
+  return (
+    <section className='relative w-full '>
+      {/*Left Arrow*/}
+      <button
+        className='absolute text-4xl left-[-30px] z-[9999] h-[397px] w-10 hover:bg-gray-300 duration-500 active:text-5xl active:duration-75'
+        onClick={handlePrev}
+        disabled={currentIndex === 0}>
+        {`<`}
+      </button>
+
+      {/*Right Arrow*/}
+      <button
+        className='absolute text-4xl right-[-30px] z-[9999] h-[397px] w-10 hover:bg-gray-300 duration-500 active:text-5xl active:duration-75'
+        onClick={handleNext}
+        disabled={currentIndex === someProducts.length - numberOfProducts}>
+        {`>`}
+      </button>
+
+      {/*Product Container*/}
+      <div 
+        className='flex w-full min-h-[400px] relative items-center justify-around gap-x-2 flex-shrink-0'>
+        {visibleProducts.map((product, index) => (
+          <ProductCard
+            key={product.ID}
+            img={images[index] || ''}
+            price={product['L. Precios C/Imp']}
+            name={product.item_desc}
+          ></ProductCard>
         ))}
-      </Slider>
-  )}
+      </div>
 
+      {/*Dots*/}
+      <div className='flex mt-5 justify-center'>
+        {Array(Math.ceil(someProducts.length / numberOfProducts)).fill(null).map((_, dotIndex) => (
+          <div
+            key={dotIndex}
+            className={`w-2 h-2 mx-1 rounded-full bg-gray-300 
+            ${dotIndex * numberOfProducts === currentIndex ? 'bg-gray-800' : ''}`}
+            onClick={() => setCurrentIndex(dotIndex * numberOfProducts)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}

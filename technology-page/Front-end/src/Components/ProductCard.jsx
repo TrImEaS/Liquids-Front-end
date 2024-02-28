@@ -7,9 +7,7 @@ export default function ProductCard({ img, price, name, addItemCart }) {
 
   
   return(
-    <section className="flex flex-col box-border items-center justify-between bg-white w-full 
-    h-[400px] max-h-[400px] max-w-[300px] min-w-[300px] max-[420px]:min-w-[220px] max-[420px]:w-[280px] max-[420px]:h-[390px] p-2 
-    shadow-xl hover:shadow-page-blue-normal hover:shadow-lg duration-500 border-2 rounded-xl hover:cursor-pointer">
+    <section className="flex flex-col box-border items-center justify-between bg-white p-2 shadow-xl hover:shadow-page-blue-normal hover:shadow-lg duration-500 border-2 rounded-xl hover:cursor-pointer min-h-[400px] h-[400px] w-[280px] min-w-[280px]">
       <header className="w-full h-[50%] box-border">
         <img 
           src={'https://http2.mlstatic.com/D_NQ_NP_622122-MLU74089433592_012024-O.webp'} 

@@ -56,33 +56,27 @@ export default function Home() {
         </section>
 
         {/*Products sale carousel*/}
-        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
-          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
+        <section className='flex flex-col justify-center w-3/4 gap-y-10'>
+          <h1 className='font-bold text-3xl max-[680px]:w-full w-3/4'>
             OFERTAS
           </h1>
-          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
             <ProductsCarousel/>
-          </div>
         </section>
 
         {/*Products news carousel*/}
-        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
-          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
+        <section className='flex flex-col justify-center w-3/4 gap-y-10'>
+          <h1 className='font-bold text-3xl max-[680px]:w-full w-3/4'>
             NOVEDADES
           </h1> 
-          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
             <ProductsCarousel/>
-          </div>
         </section>
 
         {/*Products recomendations carousel*/}
-        <section className='flex flex-col justify-center w-[90%] gap-y-10'>
-          <h1 className='font-bold text-3xl my-0 mx-auto max-[680px]:w-full w-3/4'>
+        <section className='flex flex-col justify-center w-3/4 gap-y-10'>
+          <h1 className='font-bold text-3xl max-[680px]:w-full w-3/4'>
             TE RECOMENDAMOS
           </h1>
-          <div className='w-3/4 my-0 mx-auto max-[800px]:w-[90%]'>
             <ProductsCarousel/>
-          </div>
         </section>
         
       </div>

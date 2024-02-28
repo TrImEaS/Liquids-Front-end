@@ -42,11 +42,12 @@ export default function Footer() {
       </section>
       
       {/* Mid Footer */}
-      <section className="grid grid-cols-5 max-[1500px]:grid-cols-3 w-full box-border pt-10 pl-[100px] max-[1500px]:pr-[50px] max-md:pl-0 max-md:pr-0 bg-page-blue-normal text-white gap-10 py-10">
+      <section className="grid grid-cols-5 max-[1500px]:grid-cols-3 w-full box-border pt-10 pl-[100px] max-[1500px]:pr-[50px] max-md:pl-0 max-md:pr-0 bg-page-blue-normal text-white gap-5 py-3">
         <article className="
         flex flex-col px-1 gap-5
         max-[1500px]:col-span-5 max-[1500px]:flex-row max-[1500px]:items-center
-        max-md:flex-wrap max-md:pl-10">
+        max-md:flex-wrap max-md:pl-10"
+        >
           <img 
             src="/logo-tline.png"
             className="rounded-3xl p-4 bg-white h-[140px] w-[340px]"
@@ -69,7 +70,7 @@ export default function Footer() {
           </ul>
         </article>
         
-        <article className="flex flex-col items-start gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
+        <article className="flex flex-col gap-y-2 px-1 max-md:col-span-2 max-md:pl-10 max-sm:col-span-4">
           <h1 className="font-bold">
             Categorías
           </h1>
@@ -160,7 +161,7 @@ export default function Footer() {
 
 
       {/* Social icons/card icons/ button */}
-      <article className="flex w-full justify-between px-[100px] max-md:px-5 max-[1250px]:flex-wrap pt-5 max-[1500px]:pt-12 pb-10 bg-page-blue-normal">
+      <article className="flex w-full justify-between px-[100px] max-md:px-5 max-[1250px]:flex-wrap pt-5 max-[1500px]:pt-8 pb-10 bg-page-blue-normal">
         <div className="flex w-full gap-x-24 items-center justify-start max-[1500px]:justify-between max-sm:flex-wrap max-sm:justify-center max-sm:gap-y-5 ">
           {/* Social icons */}
           <ul className="flex min-w-[180px] justify-between gap-x-2 items-center text-3xl text-white">
@@ -223,7 +224,7 @@ export default function Footer() {
           </ul>
         </div>
             
-        <div className="flex w-full justify-evenly max-[1500px]:justify-end py-10 gap-x-20 max-[1250px]:justify-between px-10">
+        <div className="flex w-full justify-evenly max-[1500px]:justify-end gap-x-20 max-[1250px]:pt-8 max-[1250px]:justify-between px-10">
           <button className="bg-white px-4 py-1 ml-28 max-[1500px]:ml-0 text-sm w-[300px] text-black rounded-full font-semibold hover:bg-page-lightblue duration-300">
             BOTÓN DE ARREPENTIMIENTO
           </button>
