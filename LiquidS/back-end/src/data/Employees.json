@@ -31,7 +31,7 @@
   "basic": 2111154,
   "cuil": "20-27220122-7",
   "admision_date": "11\/06\/2017",
-  "departure-date": "09\/27\/2018",
+  "departure_date": "09\/27\/2018",
   "company": "Real Color"
  },
  {
@@ -83,7 +83,7 @@
   "basic": 11213.2,
   "cuil": "27-26451253-6",
   "admision_date": "08\/01\/2008",
-  "departure-date": "10\/31\/2019",
+  "departure_date": "10\/31\/2019",
   "company": "Real Color"
  },
  {
@@ -101,7 +101,7 @@
   "basic": 10754.81,
   "cuil": "27-14600673-1",
   "admision_date": "10\/01\/2009",
-  "departure-date": "03\/04\/2021",
+  "departure_date": "03\/04\/2021",
   "company": "Real Color"
  },
  {
@@ -186,7 +186,7 @@
   "basic": 10907.6,
   "cuil": "27-27027420-5",
   "admision_date": "01\/05\/2015",
-  "departure-date": "03\/04\/2021",
+  "departure_date": "03\/04\/2021",
   "company": "Real Color"
  },
  {
@@ -204,7 +204,7 @@
   "basic": 10958.52,
   "cuil": "20-27416253-9",
   "admision_date": "03\/03\/2015",
-  "departure-date": "07\/01\/2021",
+  "departure_date": "07\/01\/2021",
   "company": "Real Color"
  },
  {
@@ -222,7 +222,7 @@
   "basic": 10958.52,
   "cuil": "27-28799078-8",
   "admision_date": "06\/01\/2015",
-  "departure-date": "06\/11\/2019"
+  "departure_date": "06\/11\/2019"
  },
  {
   "id": 14,
@@ -256,7 +256,7 @@
   "basic": 10958.52,
   "cuil": "27-30496035-9",
   "admision_date": "01\/08\/2016",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -274,7 +274,7 @@
   "basic": 23990,
   "cuil": "20-25529178-6",
   "admision_date": "04\/12\/2016",
-  "departure-date": "11\/05\/2018",
+  "departure_date": "11\/05\/2018",
   "company": "Real Color"
  },
  {
@@ -292,7 +292,7 @@
   "basic": 36467,
   "cuil": "27-24979153-4",
   "admision_date": "09\/01\/2016",
-  "departure-date": "10\/06\/2020",
+  "departure_date": "10\/06\/2020",
   "company": "Real Color"
  },
  {
@@ -327,7 +327,7 @@
   "basic": 21968.6,
   "cuil": "27-94740954-4",
   "admision_date": "01\/23\/2017",
-  "departure-date": "09\/10\/2018",
+  "departure_date": "09\/10\/2018",
   "company": "Real Color"
  },
  {
@@ -345,7 +345,7 @@
   "basic": "NULL",
   "cuil": "20-23178244-4",
   "admision_date": "02\/06\/2017",
-  "departure-date": "10\/31\/2018"
+  "departure_date": "10\/31\/2018"
  },
  {
   "id": 21,
@@ -362,7 +362,7 @@
   "basic": 27699.54,
   "cuil": "27-95668811-1",
   "admision_date": "05\/01\/2017",
-  "departure-date": "06\/28\/2019",
+  "departure_date": "06\/28\/2019",
   "company": "Real Color"
  },
  {
@@ -414,7 +414,7 @@
   "basic": 20719.15,
   "cuil": "20-28596756-3",
   "admision_date": "10\/13\/2017",
-  "departure-date": "06-Jul",
+  "departure_date": "06-Jul",
   "company": "Real Color"
  },
  {
@@ -432,7 +432,7 @@
   "basic": 20719.15,
   "cuil": "20-36293516-5",
   "admision_date": "10\/06\/2017",
-  "departure-date": "07\/10\/2018",
+  "departure_date": "07\/10\/2018",
   "company": "Real Color"
  },
  {
@@ -467,7 +467,7 @@
   "basic": 54116.01,
   "cuil": "20-94004343-4",
   "admision_date": "01\/12\/2018",
-  "departure-date": "04\/30\/2021",
+  "departure_date": "04\/30\/2021",
   "company": "Real Color"
  },
  {
@@ -485,7 +485,7 @@
   "basic": 41790,
   "cuil": "20-94138908-3",
   "admision_date": "01\/12\/2018",
-  "departure-date": "10\/09\/2020",
+  "departure_date": "10\/09\/2020",
   "company": "Real Color"
  },
  {
@@ -520,7 +520,7 @@
   "basic": 21111.54,
   "cuil": "20-35201748-6",
   "admision_date": "02\/27\/2018",
-  "departure-date": "08\/02\/2018",
+  "departure_date": "08\/02\/2018",
   "company": "Real Color"
  },
  {
@@ -555,7 +555,7 @@
   "basic": 21111.54,
   "cuil": "20-95230889-1",
   "admision_date": "11\/02\/2017",
-  "departure-date": "07\/27\/2018",
+  "departure_date": "07\/27\/2018",
   "company": "Real Color"
  },
  {
@@ -573,7 +573,7 @@
   "basic": 22071.16,
   "cuil": "20-35393503-9",
   "admision_date": "11\/01\/2017",
-  "departure-date": "09\/27\/2018",
+  "departure_date": "09\/27\/2018",
   "company": "Real Color"
  },
  {
@@ -608,7 +608,7 @@
   "basic": 57436.15,
   "cuil": "20-37755555-5",
   "admision_date": "09\/13\/2021",
-  "departure-date": "09\/20\/2021",
+  "departure_date": "09\/20\/2021",
   "company": "LINE TECHNOLOGY"
  },
  {
@@ -625,7 +625,7 @@
   "basic": "NULL",
   "cuil": "20-29111428-9",
   "admision_date": "07\/30\/2017",
-  "departure-date": "05\/15\/2019"
+  "departure_date": "05\/15\/2019"
  },
  {
   "id": 37,
@@ -659,7 +659,7 @@
   "basic": 18278.39,
   "cuil": "27-95698715-1",
   "admision_date": "08\/09\/2018",
-  "departure-date": "09\/15\/2021",
+  "departure_date": "09\/15\/2021",
   "company": "Real Color"
  },
  {
@@ -677,7 +677,7 @@
   "basic": 27311,
   "cuil": "20-28465048-5",
   "admision_date": "05\/11\/2018",
-  "departure-date": "04\/22\/2019",
+  "departure_date": "04\/22\/2019",
   "company": "Real Color"
  },
  {
@@ -712,7 +712,7 @@
   "basic": "NULL",
   "cuil": "20-95554147-3",
   "admision_date": "10\/05\/2018",
-  "departure-date": "12\/16\/2020",
+  "departure_date": "12\/16\/2020",
   "company": "Real Color"
  },
  {
@@ -730,7 +730,7 @@
   "basic": "NULL",
   "cuil": "20-25847129-7",
   "admision_date": "01\/14\/2014",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -748,7 +748,7 @@
   "basic": 1675519,
   "cuil": "20-17478275-0",
   "admision_date": "04\/14\/2014",
-  "departure-date": "09\/08\/2017",
+  "departure_date": "09\/08\/2017",
   "company": "Real Color"
  },
  {
@@ -766,7 +766,7 @@
   "basic": "NULL",
   "cuil": "27-35972680-0",
   "admision_date": "09\/01\/2014",
-  "departure-date": "11\/28\/2017",
+  "departure_date": "11\/28\/2017",
   "company": "Real Color"
  },
  {
@@ -784,7 +784,7 @@
   "basic": "NULL",
   "cuil": "20-31049966-9",
   "admision_date": "03\/18\/2015",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -802,7 +802,7 @@
   "basic": "NULL",
   "cuil": "20-31245223-6",
   "admision_date": "06\/05\/2015",
-  "departure-date": "02\/24\/2017",
+  "departure_date": "02\/24\/2017",
   "company": "Real Color"
  },
  {
@@ -820,7 +820,7 @@
   "basic": 16755.19,
   "cuil": "20-27217169-7",
   "admision_date": "08\/20\/2015",
-  "departure-date": "08\/01\/2017",
+  "departure_date": "08\/01\/2017",
   "company": "Real Color"
  },
  {
@@ -838,7 +838,7 @@
   "basic": "NULL",
   "cuil": "20-30122040-6",
   "admision_date": "09\/01\/2015",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -873,7 +873,7 @@
   "basic": 5453.8,
   "cuil": "20-34880766-9",
   "admision_date": "11\/20\/2015",
-  "departure-date": "03\/16\/2016",
+  "departure_date": "03\/16\/2016",
   "company": "Real Color"
  },
  {
@@ -891,7 +891,7 @@
   "basic": "NULL",
   "cuil": "20-34539571-8",
   "admision_date": "01\/08\/2016",
-  "departure-date": "12\/26\/2017",
+  "departure_date": "12\/26\/2017",
   "company": "Real Color"
  },
  {
@@ -926,7 +926,7 @@
   "basic": "NULL",
   "cuil": "23-25129467-4",
   "admision_date": "01\/04\/2016",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -944,7 +944,7 @@
   "basic": 17938.65,
   "cuil": "20-29460828-2",
   "admision_date": "05\/04\/2016",
-  "departure-date": "12\/26\/2017",
+  "departure_date": "12\/26\/2017",
   "company": "Real Color"
  },
  {
@@ -962,7 +962,7 @@
   "basic": 42298,
   "cuil": "20-34175245-1",
   "admision_date": "02\/01\/2021",
-  "departure-date": "03\/14\/2021",
+  "departure_date": "03\/14\/2021",
   "company": "T-LINE"
  },
  {
@@ -980,7 +980,7 @@
   "basic": "NULL",
   "cuil": "20-92544472-4",
   "admision_date": "02\/06\/2017",
-  "departure-date": "10\/4\/02017",
+  "departure_date": "10\/4\/02017",
   "company": "Real Color"
  },
  {
@@ -998,7 +998,7 @@
   "basic": "NULL",
   "cuil": "27-34574272-2",
   "admision_date": "12\/17\/2018",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -1016,7 +1016,7 @@
   "basic": 54731,
   "cuil": "27-95849705-4",
   "admision_date": "02\/18\/2019",
-  "departure-date": "06\/07\/2021",
+  "departure_date": "06\/07\/2021",
   "company": "Real Color"
  },
  {
@@ -1034,7 +1034,7 @@
   "basic": 71795,
   "cuil": "20-95596569-9",
   "admision_date": "04\/24\/2019",
-  "departure-date": 18,
+  "departure_date": 18,
   "company": "Real Color"
  },
  {
@@ -1084,7 +1084,7 @@
   "basic": 56616,
   "cuil": "20-22004948-6",
   "admision_date": "08\/29\/2019",
-  "departure-date": "10\/19\/2021",
+  "departure_date": "10\/19\/2021",
   "company": "T-LINE"
  },
  {
@@ -1170,7 +1170,7 @@
   "basic": 56616.01,
   "cuil": "20-28846888-6",
   "admision_date": "06\/10\/2021",
-  "departure-date": "12\/09\/2021",
+  "departure_date": "12\/09\/2021",
   "company": "TECHNOLOGY LINE"
  },
  {
@@ -1188,7 +1188,7 @@
   "basic": 70770,
   "cuil": "20-38153884-3",
   "admision_date": "11\/01\/2020",
-  "departure-date": "03\/10\/2022",
+  "departure_date": "03\/10\/2022",
   "company": "T-LINE"
  },
  {
@@ -1206,7 +1206,7 @@
   "basic": 57436.15,
   "cuil": "20-26425194-0",
   "admision_date": "12\/10\/2020",
-  "departure-date": "08\/20\/2021",
+  "departure_date": "08\/20\/2021",
   "company": "T-LINE"
  },
  {
@@ -1224,7 +1224,7 @@
   "basic": 56616,
   "cuil": "20-41352721-0",
   "admision_date": "11\/01\/2020",
-  "departure-date": "10\/19\/2021",
+  "departure_date": "10\/19\/2021",
   "company": "Real Color"
  },
  {
@@ -1242,7 +1242,7 @@
   "basic": 54116.01,
   "cuil": "20-95084175-4",
   "admision_date": "12\/10\/2020",
-  "departure-date": "05\/31\/2021",
+  "departure_date": "05\/31\/2021",
   "company": "TECHNOLOGY LINE"
  },
  {
@@ -1277,7 +1277,7 @@
   "basic": "NULL",
   "cuil": "27-37171456-7",
   "admision_date": "12\/19\/2019",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -1295,7 +1295,7 @@
   "basic": 42986,
   "cuil": "20-29328466-1",
   "admision_date": "02\/02\/2021",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "T-LINE"
  },
  {
@@ -1445,7 +1445,7 @@
   "basic": 71538,
   "cuil": "27-95872331-7",
   "admision_date": "10\/01\/2021",
-  "departure-date": "10\/25\/2021",
+  "departure_date": "10\/25\/2021",
   "company": "NULL"
  },
  {
@@ -1616,7 +1616,7 @@
   "basic": 1235,
   "cuil": "27-96038045-8",
   "admision_date": "05\/14\/2021",
-  "departure-date": "10\/07\/2021",
+  "departure_date": "10\/07\/2021",
   "company": "T-LINE"
  },
  {
@@ -1685,7 +1685,7 @@
   "basic": 62031,
   "cuil": "20-17606322-0",
   "admision_date": "03\/21\/2020",
-  "departure-date": "16\/062021",
+  "departure_date": "16\/062021",
   "company": "T-LINE"
  },
  {
@@ -1703,7 +1703,7 @@
   "basic": 16443.76,
   "cuil": "20-20607521-0",
   "admision_date": "08\/01\/2021",
-  "departure-date": "12\/21\/2015",
+  "departure_date": "12\/21\/2015",
   "company": "Real Color"
  },
  {
@@ -1721,7 +1721,7 @@
   "basic": 57436.15,
   "cuil": "23-34617250-9",
   "admision_date": "05\/13\/2021",
-  "departure-date": "06\/15\/2021",
+  "departure_date": "06\/15\/2021",
   "company": "T-LINE"
  },
  {
@@ -1807,7 +1807,7 @@
   "basic": "NULL",
   "cuil": "20-36647750-1",
   "admision_date": "05\/09\/2022",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "Real Color"
  },
  {
@@ -1842,7 +1842,7 @@
   "basic": 10958.52,
   "cuil": "20-26282292-4",
   "admision_date": "04\/03\/2013",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "Real Color"
  },
  {
@@ -1945,7 +1945,7 @@
   "basic": "NULL",
   "cuil": "20-27201767-1",
   "admision_date": "08\/19\/2017",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "T-LINE"
  },
  {
@@ -1979,7 +1979,7 @@
   "basic": 31803.54,
   "cuil": "20-39749266-4",
   "admision_date": "10\/15\/2019",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -1997,7 +1997,7 @@
   "basic": 4285,
   "cuil": "27-30114621-9",
   "admision_date": "07\/15\/2020",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "NULL"
  },
  {
@@ -2032,7 +2032,7 @@
   "basic": 75000,
   "cuil": 202823294647,
   "admision_date": "11\/04\/2022",
-  "departure-date": "11\/08\/2022",
+  "departure_date": "11\/08\/2022",
   "company": "TECHNOLOGY LINE"
  },
  {
@@ -2118,7 +2118,7 @@
   "basic": 68066,
   "cuil": "20-43817854-7",
   "admision_date": "03\/06\/2023",
-  "departure-date": "   ",
+  "departure_date": "   ",
   "company": "Real Color"
  },
  {
@@ -2136,7 +2136,7 @@
   "basic": 68066,
   "cuil": "20-20404772-4",
   "admision_date": "03\/10\/2023",
-  "departure-date": "   ",
+  "departure_date": "   ",
   "company": "Real Color"
  },
  {
@@ -2273,7 +2273,7 @@
   "basic": 71795,
   "cuil": "20-36336768-3",
   "admision_date": "01\/24\/2022",
-  "departure-date": "02\/23\/2022",
+  "departure_date": "02\/23\/2022",
   "company": "Technology Line"
  },
  {
@@ -2291,7 +2291,7 @@
   "basic": 16755,
   "cuil": "20-34572619-6",
   "admision_date": "08\/24\/2017",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "Real Color"
  },
  {
@@ -2309,7 +2309,7 @@
   "basic": 16443,
   "cuil": "20-94508428-7",
   "admision_date": "10\/06\/2017",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "Real Color"
  },
  {
@@ -2344,7 +2344,7 @@
   "basic": "NULL",
   "cuil": "20-42321292-7",
   "admision_date": "05\/12\/2023",
-  "departure-date": "NULL",
+  "departure_date": "NULL",
   "company": "LINE TECHNOLOGY"
  }
 ]
