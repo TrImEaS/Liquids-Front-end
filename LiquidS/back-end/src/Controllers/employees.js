@@ -1,4 +1,5 @@
-import { EmployeeModel } from "../models/employee.js"
+// import { EmployeeModel } from "../Models/local/employee.js"
+import { EmployeeModel } from '../Models/sqlite3-turso/employee.js'
 import { validatePartialEmployee } from '../Schemas/employees.js'
 import validateEmployee from '../Schemas/employees.js'
 
@@ -14,8 +15,8 @@ export class EmployeeController {
 
   // Get an employee with the docket
   static async getByDocket (req, res) {
-    const { docket } = req.params
-    const employee = await EmployeeModel.getByDocket({ docket })
+    const { id } = req.params
+    const employee = await EmployeeModel.getById({ id })
     if (employee) return res.json(employee)
     
     res.status(404).json({ message: 'Employee not found' })
@@ -24,13 +25,16 @@ export class EmployeeController {
   // Create an employee
   static async create (req, res) { 
     const result = validateEmployee(req.body)
-  
+    const company = req.body.company
+    const docket = req.body.docket
+
     if (result.error){
       return res.status(422).json({ error: JSON.parse(result.error.message) })
     }
   
-    const newEmployee = await EmployeeModel.create({ input: result.data })
-    
+    const newEmployee = await EmployeeModel.create({ input: result.data, company, docket })
+    if(newEmployee === false) 
+      return res.status(422).json({ message: `El legajo ingresado ya esta en uso, ultimo legajo usado en ${company} es ${docket}`})
     res.status(201).json(newEmployee)
   }
 
