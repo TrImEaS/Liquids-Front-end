@@ -13,33 +13,40 @@ const prisma = new PrismaClient({ adapter });
 
 export class EmployeeModel {
 
- // Get all employees
- static async getAll ({ company }) {
-    const employees = await prisma.employees.findMany({
-      where: {
-        company: {
-          equals: company,
-        },
-      },
-    });
+ // Get all employees but if company param exist return only employees from this company
+  static async getAll ({ company }) {
 
+    if(company){
+      const employees = await prisma.employees.findMany({
+        where: {
+          company: {
+            equals: company.toLowerCase(),
+          },
+          orderBy: {
+            title: 'asc',
+          },
+        },
+      })
+    }
+    
+    const employees = await prisma.employees.findMany()
+    
     return employees;
   }
 
   // Get an employee with the id
-  static async getById ({ id }) {
-    const response = await prisma.employee.findUnique({ where: { id: parseInt(id) } });
-    return response;
+  static async getById (id) {
+    const employee = await prisma.employees.findUnique({
+      where: {
+        id: id
+      },
+    })
+    return employee
   }
 
-  static async getAllByCompany ({ company }) {
-    const response = await prisma.employee.findMany({ where: { company: { equals: company.toLowerCase() } } });
-    return response;
-  }
-
-// Create an employee
+  // Create an employee
   static async create ({ input, company, docket }) {
-    const isDocketAlreadyUsed = await prisma.employee.findFirst({
+    const isDocketAlreadyUsed = await prisma.employees.findFirst({
       where: {
         company: { equals: company.toLowerCase() },
         docket: { equals: parseInt(docket) }
@@ -50,7 +57,7 @@ export class EmployeeModel {
       return false;
     }
 
-    const newEmployee = await prisma.employee.create({
+    const newEmployee = await prisma.employees.create({
       data: {
         ...input,
         company: company.toLowerCase(),
@@ -63,20 +70,21 @@ export class EmployeeModel {
 
   // Edit an employee with the id
   static async update ({ id, input }) {
-    const updatedEmployee = await prisma.employee.update({
+    const updatedEmployee = await prisma.employees.update({
       where: { id: parseInt(id) },
       data: input
-    });
+    })
 
-    return updatedEmployee;
+    return updatedEmployee
   }
 
-  // Delete an employee with the id
-  static async delete ({ id }) {
-    const deletedEmployee = await prisma.employee.delete({
-      where: { id: parseInt(id) }
-    });
+  // Set an employee inactive
+  static async delete ({ id, input }) {
+    const updateEmployeeState = await prisma.employees.update({
+      where: { id: parseInt(id) },
+      data: input
+    })
 
-    return !!deletedEmployee;
+    return updateEmployeeState;
   }
 }

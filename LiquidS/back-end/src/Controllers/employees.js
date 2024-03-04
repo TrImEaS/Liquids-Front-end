@@ -13,10 +13,10 @@ export class EmployeeController {
     res.json(employees)
   }
 
-  // Get an employee with the docket
-  static async getByDocket (req, res) {
-    const { id } = req.params
-    const employee = await EmployeeModel.getById({ id })
+  // Get an employee by id
+  static async getById (req, res) {
+    let { id } = req.params
+    const employee = await EmployeeModel.getById(parseInt(id))
     if (employee) return res.json(employee)
     
     res.status(404).json({ message: 'Employee not found' })
@@ -45,22 +45,24 @@ export class EmployeeController {
     if (!result.success) 
       return res.status(400).json({ error: JSON.parse(result.error.message) })
   
-    const { docket } = req.params
+    const { id } = req.params
   
-    const updateEmployee = await EmployeeModel.update({ docket, input: result.data })  
+    const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
   
     return res.json(updateEmployee)
   }
 
   // Delete an employee with the docket
   static async delete (req, res) {
-    const { docket } = req.params
-    const result = await EmployeeModel.delete({ docket })
+    const result = validatePartialEmployee(req.body)
+    
+    if (!result.success) 
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
   
-    if(result === false) {
-      return res.status(404).json({ message: 'Empleado no encontrado' })
-    }
+    const { id } = req.params
   
-    return res.json({ message: 'Empleado borrado correctamente'})
+    const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
+  
+    return res.json(updateEmployee)
   }
 }

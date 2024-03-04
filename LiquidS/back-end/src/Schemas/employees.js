@@ -14,7 +14,7 @@ const employeeSchema = z.object({
   }).nullable().default(null),
   
   birth_date: z.string().refine((dateString) => {
-    const date = new Date(dateString);
+    const date = new Date(dateString)
     return !isNaN(date.getTime()) && date >= new Date("1900-01-01") && date <= new Date("2024-01-01")
   },
   { message: 'Fecha de nacimiento fuera de rango (Minimo 1900-01-01)' }).nullable().default(null),
@@ -24,7 +24,9 @@ const employeeSchema = z.object({
     invalid_type_error: 'La nacionalidad debe de ser de tipo string/texto'
   }).nullable().default(null),
   
-  dni: z.number().int().positive(),
+  dni: z.string({
+    required_error: 'Se requiere DNI',
+  }),
   
   salary_settlement: z.enum(['Mensual', 'Semanal', 'Diario', 'Anual']),
   
@@ -40,7 +42,9 @@ const employeeSchema = z.object({
   
   basic: z.number().positive().nullable().default(null),
   
-  cuil: z.number().positive(),
+  cuil: z.string({
+    required_error: 'Se requiere CUIL',
+  }),
   
   admision_date: z.string().refine((dateString) => {
     const date = new Date(dateString);
@@ -56,7 +60,10 @@ const employeeSchema = z.object({
   },{ message: 'Fecha de partida fuera de rango (Minimo 1990-01-01)'})
   .default(null),
   
-  company: z.enum(['Technologyline', 'Realcolor', 'Linetechnology', 'Tline'])
+  company: z.enum(['Technologyline', 'Realcolor', 'Linetechnology', 'Tline']),
+
+  civilstatus: z.enum(['soltero', 'casado', 'separado', 'divorciado', 'viudo', 'soltera', 'casada', 'separada', 'divorciada', 'viuda']),
+  activo: z.boolean().default(true)
 })
 
 export default function validateEmployee(object) {
