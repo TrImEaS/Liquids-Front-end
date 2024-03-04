@@ -4,9 +4,6 @@ import banner1 from '../Assets/BannerCarousel-images/banner1.jpg'
 import banner2 from '../Assets/BannerCarousel-images/banner2.jpg'
 // import banner3 from '../Assets/BannerCarousel-images/banner3.jpg'
 
-
-const carouselImages = []
-
 export default function BannerCarousel() {
   return (
     <section>
@@ -27,20 +24,22 @@ export default function BannerCarousel() {
             />
           </div>  
         ))} */}
-        <div>
+        <div className="w-full h-full">
           <img 
             src={banner1}
-            className="min-h-[100px] object-fill"
+            className="min-h-[180px] w-full object-fill"
+            loading="lazy"
           />
         </div>
-        <div>
+        <div className="w-full h-full">
           <img 
             src={banner2}
-            className="min-h-[100px] object-fill"
+            className="min-h-[180px] w-full object-fill"
+            loading="lazy"
           />
         </div>
         {/* <div>
-          <img src={banner3} alt="" />
+          <img src={''} alt="" />
         </div> */}
       </Carousel>
     </section>

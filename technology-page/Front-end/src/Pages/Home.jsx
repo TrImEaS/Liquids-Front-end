@@ -15,7 +15,9 @@ export default function Home() {
       <div 
         name='home' 
         className={`flex flex-col items-center gap-10 min-h-screen h-full w-full gap-y-24`}>
-        <BannerCarousel></BannerCarousel>
+        <section className='max-md:min-h-[170px]'>
+          <BannerCarousel/>
+        </section>
         {/*Banners*/}
         <section className='flex flex-col items-center w-full gap-y-10'>
           <BannersCards/>

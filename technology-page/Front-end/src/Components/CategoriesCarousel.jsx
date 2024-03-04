@@ -80,7 +80,9 @@ export default function ProductsCarousel () {
             src={image1 ? image1 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p><span>AURICULARES</span></p>
+          <p>
+            <span>AURICULARES</span>
+          </p>
         </NavLink>
       </div>
 
@@ -90,7 +92,9 @@ export default function ProductsCarousel () {
             src={image2 ? image2 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>CELULARES</span></p>
+          <p className='text-center'>
+            <span>CELULARES</span>
+          </p>
         </NavLink>
       </div>
 
@@ -100,7 +104,9 @@ export default function ProductsCarousel () {
             src={image3 ? image3 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>CUIDADO PERSONAL</span></p>
+          <p className='text-center'>
+            <span>CUIDADO PERSONAL</span>
+          </p>
         </NavLink>
       </div>
 
@@ -110,7 +116,9 @@ export default function ProductsCarousel () {
             src={image4 ? image4 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>LAVADO</span></p>
+          <p className='text-center'>
+            <span>LAVADO</span>
+          </p>
         </NavLink>
       </div>
 
@@ -120,7 +128,9 @@ export default function ProductsCarousel () {
             src={image5 ? image5 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>PEQUEÑOS ELECTRO</span></p>
+          <p className='text-center'>
+            <span>PEQUEÑOS ELECTRO</span>
+          </p>
         </NavLink>
       </div>
 
@@ -130,7 +140,9 @@ export default function ProductsCarousel () {
             src={image6 ? image6 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>PARLANTES</span></p>
+          <p className='text-center'>
+            <span>VENTILADORES</span>
+          </p>
         </NavLink>
       </div>
 
@@ -140,7 +152,9 @@ export default function ProductsCarousel () {
             src={image7 ? image7 : defaultImage} 
             className='w-28 h-28 rounded-full border-2 shadow-lg bg-marine-100'>
           </img>
-          <p className='text-center'><span>VENTILADORES</span></p>
+          <p className='text-center'>
+            <span>PARLANTES</span>
+          </p>
         </NavLink>
       </div>
     </Slider>

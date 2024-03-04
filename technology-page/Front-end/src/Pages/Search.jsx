@@ -1,151 +1,72 @@
-import React, { useState } from "react"
-import { FaAngleUp, FaAngleDown } from 'react-icons/fa'
-import BannerCarousel from '../Components/BannerCarousel.jsx'
 import ProductsSearch from '../Components/ProductsSearch'
+import CategoriesFilters from '../Components/CategoriesFilters.jsx'
+import products from '../Data/products.json'
+import { processProducts } from '../Mocks/processProducts.js'
+import { useState } from 'react'
 
 export default function Search ({ history }) {
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const [isBrandOpen, setIsBrandOpen] = useState(false);
-  const [isPriceOpen, setIsPriceOpen] = useState(false);
-  const [selectPrice, setSelectPrice] = useState(0)
-
-  const categories = ['Electro', 'Informatica', 'Tecnologia', 'Mas Categorias']
-  const subCategories = ['Calefaccion', 'Aires Acondicionados', 'Cuidado Personal']
-  const brands = ['Bgh', 'Hitachi', 'LG', 'RCA', 'Samsung']
-  const prices = [100, 1000, 2000, 10000, 100000]
+  const [filterMenu, setFilterMenu] = useState(false)
+  const filterProducts = processProducts(products)
   
-  const handleToggleCategory = () => setIsCategoryOpen(!isCategoryOpen);
-  const handleToggleBrand = () => setIsBrandOpen(!isBrandOpen);
-  const handleTogglePrice = () => setIsPriceOpen(!isPriceOpen);
-  const handleSelectPrice = (e) => setSelectPrice(parseInt(e.target.value))
-
+  const handleFilterMenu = () => setFilterMenu(!filterMenu)
   return (
     <section className="flex flex-col w-3/4 py-10">
-      <header className="flex w-full justify-between pb-16">
-        <article className="flex items-center">
+      <header className="flex w-full justify-between pb-14 max-sm:flex-col">
+        <article className="flex items-center max-sm:justify-center">
           <p>INICIO/TECNOLOGÍA/TELEVISORES</p>
         </article>
 
-        <article className="flex gap-x-2 items-center">
-          <p>ORDENAR POR ⬇️⬆️</p>
+        <article className="flex gap-x-2 items-center max-sm:justify-center">
           <select 
-            name="filter" 
+            name="filter"
             className="px-2 py-1 border-2 border-black rounded-lg">
-            <option 
+            <option
+              className='max-sm:text-sm' 
               value="default">
               Orden por defecto
             </option>
-            <option 
+            <option
+              className='max-sm:text-sm' 
               value="min">
               Menor precio
             </option>
-            <option 
+            <option
+              className='max-sm:text-sm' 
               value="max">
               Mayor precio
             </option>
           </select>
+          
+          {/*Aside filters for mobile*/}
+          <div 
+            className='sm:hidden relative flex'>
+            <span 
+              className='text-black border-2 border-black px-2 py-1 rounded-lg cursor-pointer'
+              onClick={handleFilterMenu}>
+              Filtros
+            </span>
+            <div className={`
+            sm:hidden flex-col gap-y-5 rounded w-[210px] absolute top-[40px] left-[-80px] bg-page-gray-light p-5
+            ${filterMenu ? 'hidden' : 'flex'}
+            `}>
+              <CategoriesFilters products={filterProducts}/>
+            </div>
+          </div>
+
         </article>
       </header>
 
-      <main className="flex gap-x-5 w-full h-full">
+      <main className="flex max-sm:flex-col gap-x-5 w-full h-full">
+        {/*Aside filters max screen*/}
         <aside className="flex flex-col gap-y-8 w-[20%]">
-          {/*Categories*/}
-          <div className="flex flex-col gap-y-2 border-t border-black">
-            <header className="flex justify-between items-center py-1">
-              <span 
-                onClick={handleToggleCategory} 
-                className="font-bold cursor-pointer flex justify-between pr-1 w-full items-center">
-                Categoría
-                {isCategoryOpen 
-                  ? <FaAngleUp/> 
-                  : <FaAngleDown/>}
-              </span>
-            </header>
-
-            <section className={`${isCategoryOpen ? 'hidden' : 'flex'} flex-col gap-y-2`}>
-              {categories.map((categorie, index) => (
-                  <span key={index}>{categorie}</span>
-              ))}
-              
-              <span className="cursor-pointer text-page-lightblue hover:text-page-blue-normal">
-                Ver mas...
-              </span>
-            </section>
-          
-          </div>
-
-          {/*Brands*/}
-          <div className="flex flex-col gap-y-2 border-t border-black">
-            <header className="flex justify-between items-center py-1">
-              <span 
-                onClick={handleToggleBrand} 
-                className="font-bold cursor-pointer flex justify-between pr-1 w-full items-center">
-                Marcas
-                {isBrandOpen 
-                  ? <FaAngleUp/> 
-                  : <FaAngleDown/>}
-              </span>
-            </header>
-
-            <section className={`${isBrandOpen ? 'hidden' : 'flex'} flex-col gap-y-2`}>
-              {brands.map((brand, index) => (
-                <article 
-                  key={index}
-                  className="flex items-center gap-x-3">
-                  <input 
-                    id={`${brand}-checkbox`}
-                    className="w-4 h-4"
-                    type="checkbox"
-                    value={brand}>
-                  </input>
-                  <label htmlFor={`${brand}-checkbox`}>{brand}</label>
-                </article>
-              ))}
-
-              <span className="cursor-pointer text-page-lightblue hover:text-page-blue-normal">
-                Ver mas...
-              </span>
-            </section>
-          </div>
-
-          {/*Prices*/}
-          <div className="flex flex-col gap-y-2 border-t border-black w-full">
-            <header className="flex flex-col justify-between items-center py-1 w-full">
-              <span 
-                onClick={handleTogglePrice} 
-                className="font-bold cursor-pointer flex justify-between pr-1 w-full items-center">
-                Precios
-                {isPriceOpen 
-                  ? <FaAngleUp/> 
-                  : <FaAngleDown/>}
-              </span>
-            </header>
-
-            <section className="flex flex-col justify-center items-center w-full">
-              <div className="flex justify-between w-full">
-                <p className="flex flex-col justify-between items-start w-full">
-                  <span>Minimo</span>
-                  <span>{selectPrice}</span>
-                </p>
-                <p className="flex flex-col justify-between items-end w-full">
-                  <span>Maximo</span>
-                  <span>{prices.pop()}</span>
-                </p>
-              </div>
-              <input 
-                className="w-[90%]"
-                type="range" 
-                min={prices[0]} 
-                max={prices.pop()}
-                value={selectPrice}
-                onChange={handleSelectPrice}
-              />
-            </section>
+          <div className='max-sm:hidden flex flex-col gap-y-8'>
+            <CategoriesFilters products={filterProducts}/>
           </div>
         </aside>
-
-        <ProductsSearch/>
-
+        
+        <section>
+          <ProductsSearch/>
+        </section>
       </main>
 
     </section>

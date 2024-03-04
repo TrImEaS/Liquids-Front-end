@@ -11,7 +11,7 @@ export default function ProductCard({ img, price, name, addItemCart }) {
       <header className="w-full h-[50%] box-border">
         <img 
           src={`https://www.technologyline.com.ar/products-images/${img}.jpg`} 
-          // src={img} 
+          loading="lazy"
           alt="Product-Card" 
           className="w-full h-full" 
         />
