@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+LiquidS es una app-web la cual esta realizada con react, tailwind, react-router-dom, entre otros. Es una aplicacion para realizar recibos de sueldo y libro sueldo, la cual estoy creando para una empresa la cual ya empezo a utilizarla. Esta cuenta con su API-REST (que tambien esta en mi repositorio) creada con node, express, zod, MVC, y cuenta con su base de datos SQLITE desplegada en Turso, y utilizo prisma para ORM. Sigue en desarrollo pero le falta poco tiempo para una version final y estable.
