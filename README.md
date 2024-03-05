@@ -1,3 +1,8 @@
-# RealWorkFiles
-Este proyecto es para liquidacion de sueldos y para hacer los recibos de sueldos. Por ahora se encuentra la primera version solo con html, css y js. Esta version permite al cliente realizar un recibo de sueldo a la vez tipeando dato por dato, y sirve mas que nada por si ocurre un error al imprimir todos, o si se imprimio con un error, (o alguna variable similar) poder imprimir nuevamente el recibo del empleado como corresponde. 
-Proximamente el proyecto va a contar con base de datos y back-end asi se pueden guardar, recuperar, modificar y verificar recibos de sueldos de todos los empleados de la empresa. (tecnologias a integrar, primero node js, mysql, luego actualizar el front con react)
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
