@@ -340,6 +340,19 @@ const dataConcepts = [
  `INSERT INTO concepts(name,type) VALUES ('Descuento DTO 561/19','DESCUENTO')`
 ]
 
+// Usado para creartabla Employees
+  // async function startServer() {
+  //   try {
+  //     await createTable()
+  //     await insertData()
+  //   } catch (error) {
+  //     console.error('Error while executing queries:', error)
+  //     process.exit(1)
+  //   }
+  // }
+  // startServer();
+
+  
 // Para bozrrar la tabla
 // const dropTableQuery = `DROP TABLE IF EXISTS employees`;
 // await client.execute(dropTableQuery);

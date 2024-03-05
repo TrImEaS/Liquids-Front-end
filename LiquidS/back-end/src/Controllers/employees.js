@@ -24,45 +24,70 @@ export class EmployeeController {
 
   // Create an employee
   static async create (req, res) { 
-    const result = validateEmployee(req.body)
-    const company = req.body.company
-    const docket = req.body.docket
-
-    if (result.error){
-      return res.status(422).json({ error: JSON.parse(result.error.message) })
-    }
+    try {
+      const result = validateEmployee(req.body)
+      const company = req.body.company
+      const docket = req.body.docket
   
-    const newEmployee = await EmployeeModel.create({ input: result.data, company, docket })
-    if(newEmployee === false) 
-      return res.status(422).json({ message: `El legajo ingresado ya esta en uso, ultimo legajo usado en ${company} es ${docket}`})
-    res.status(201).json(newEmployee)
+      if (result.error){
+        return res.status(422).json({ error: JSON.parse(result.error.message) })
+      }
+    
+      const newEmployee = await EmployeeModel.create({ input: result.data, company, docket })
+      if(newEmployee === false) 
+        return res.status(422).json({ message: `El legajo ingresado ya esta en uso, ultimo legajo usado en ${company} es ${docket}`})
+      res.status(201).json(newEmployee)
+    } 
+    catch (e) {
+      console.log('Error creating employee: ', e)
+
+      return res.status(500).json({ error: "Internal server error" });  
+    }
   }
 
   // Edit an employee with the docket
   static async update (req, res) { 
-    const result = validatePartialEmployee(req.body)
+    try {
+      const result = validatePartialEmployee(req.body)
+      
+      if (!result.success) 
+        return res.status(400).json({ error: JSON.parse(result.error.message) })
     
-    if (!result.success) 
-      return res.status(400).json({ error: JSON.parse(result.error.message) })
-  
-    const { id } = req.params
-  
-    const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
-  
-    return res.json(updateEmployee)
+      const { id } = req.params
+    
+      const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
+    
+      return res.json(updateEmployee)
+    } 
+    catch (e) {
+      console.log('Error updating employee: ', e)
+
+      return res.status(500).json({ error: "Internal server error" });
+    }
   }
 
   // Delete an employee with the docket
   static async delete (req, res) {
-    const result = validatePartialEmployee(req.body)
+    try {
+      const result = validatePartialEmployee(req.body)
+      
+      if (!result.success) 
+        return res.status(400).json({ error: JSON.parse(result.error.message) })
     
-    if (!result.success) 
-      return res.status(400).json({ error: JSON.parse(result.error.message) })
-  
-    const { id } = req.params
-  
-    const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
-  
-    return res.json(updateEmployee)
+      const { id } = req.params
+
+      if(result.data.activo === undefined){
+        return res.status(400).json({ error: 'Se requiere especificar si el empleado esta activo o no ("activo": false/true)'})
+      }
+    
+      const updateEmployee = await EmployeeModel.update({ id, input: result.data })  
+    
+      return res.json(updateEmployee)
+    } 
+    catch (e) {
+      console.log('Error deleting employee: ', e)
+
+      return res.status(500).json({ error: "Internal server error" });
+    }
   }
 }

@@ -56,4 +56,12 @@ export class ConceptModel {
 
     return updatedConcept
   }
+
+  static async delete ({ id }) {
+    const result = await prisma.concepts.delete({
+      where:{ id: id}
+    })
+    
+    return result
+  }
 }

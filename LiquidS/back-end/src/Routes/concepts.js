@@ -8,3 +8,4 @@ conceptRouter.post('/', ConceptController.create)
 
 conceptRouter.get('/:id', ConceptController.getById)
 conceptRouter.patch('/:id', ConceptController.update)
+conceptRouter.delete('/:id', ConceptController.delete)

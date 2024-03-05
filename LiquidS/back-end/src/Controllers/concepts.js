@@ -23,28 +23,62 @@ export class ConceptController {
 
   // Create an concept
   static async create (req, res) { 
-    const result = validateConcept(req.body)
-
-    if (result.error){
-      return res.status(422).json({ error: JSON.parse(result.error.message) })
-    }
+    try {
+      const result = validateConcept(req.body)
   
-    const newConcept = await ConceptModel.create({ input: result.data })
+      if (result.error){
+        return res.status(422).json({ error: JSON.parse(result.error.message) })
+      }
+    
+      const newConcept = await ConceptModel.create({ input: result.data })
+  
+      res.status(201).json(newConcept)
+    } 
+    catch (e) {
+      console.log('Error updating concept: ', e)
 
-    res.status(201).json(newConcept)
+      return res.status(500).json({ error: "Internal server error" });
+    }
   }
 
   // Edit an concept by id
   static async update (req, res) { 
-    const result = validatePartialConcept(req.body)
+    try {
+      const result = validatePartialConcept(req.body)
+      
+      if (!result.success) 
+        return res.status(400).json({ error: JSON.parse(result.error.message) })
+      
+      const { id } = req.params
     
-    if (!result.success) 
-      return res.status(400).json({ error: JSON.parse(result.error.message) })
-  
+      const updateConcept = await ConceptModel.update({ id, input: result.data })  
+    
+      return res.json(updateConcept)
+
+    } 
+    catch (e) {
+      console.log('Error updating concept: ', e)
+
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  }
+
+  static async delete (req, res) {
     const { id } = req.params
+
+    try {
+      const result = await ConceptModel.delete({ id: parseInt(id) })
   
-    const updateConcept = await ConceptModel.update({ id, input: result.data })  
+      if (!result) {
+        return res.status(404).json({ error: 'Concept not found'})
+      }
   
-    return res.json(updateConcept)
+      return res.json(result)
+    } 
+    catch (e) {
+      console.log('Error deleting concept: ', e)
+
+      return res.status(500).json({ error: "Internal server error" });
+    }
   }
 }
