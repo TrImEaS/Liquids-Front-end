@@ -16,15 +16,14 @@ export default function Logo() {
   document.documentElement.classList.toggle('dark', darkMode)
 
   return (
-    <>
     <section className='flex gap-6'>
       
-      <div className='group w-8 h-8 bg-transparent rounded-full dark:border-white border-black border-solid border'>
-        <div className='group w-9 h-8 bg-transparent rounded-full dark:border-white border-black border-solid border'>
+      <div className='group w-8 h-8 bg-transparent rounded-lg dark:border-white border-black border-solid border cursor-pointer'>
+        <div className='group w-9 h-8 bg-transparent rounded-lg dark:border-white border-black border-solid border cursor-pointer'>
           <NavLink 
             to='/' 
             className='flex items-center justify-center dark:text-white text-xl group-hover:animate-bounce'
-            >RC
+            >L
           </NavLink>
         </div>
       </div>
@@ -38,6 +37,5 @@ export default function Logo() {
       </button>
 
     </section>
-    </>
   )
 }

@@ -21,10 +21,10 @@ export default function NavLinks({ style }) {
       </NavLink>
 
       <NavLink 
-         to='/crear'
+         to='/imprimir'
          className={` ${location.pathname === '/crear' ? 'isActive' : ''} ${style} 
          dark:hover:text-cyan-500 hover:text-[#378d86]  dark:text-slate-50 duration-300`} 
-         >Crear
+         >Imprimir Recibos
       </NavLink>
 
       <NavLink 

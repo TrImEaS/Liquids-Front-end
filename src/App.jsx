@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
-import { Home, Error, Ver, Crear, Editar } from './Routes/Routes'
+import { Home, Error, Ver, Imprimir, Editar } from './Routes/Routes'
 import Nav from './Components/Nav'
 import './App.css'
 
@@ -23,7 +23,6 @@ function App() {
       <main className='flex flex-col items-center bg-slate-100 dark:bg-slate-900
         text-black font-mono dark:text-slate-50 min-h-screen font-extralight min-w-[390px]'>
         <Nav></Nav>
-        <div className='h-[100px]'></div>
         <Routes>
           <Route 
             path='/' 
@@ -34,8 +33,8 @@ function App() {
             element={<Ver></Ver>}>
           </Route>
           <Route 
-            path='crear' 
-            element={<Crear></Crear>}>
+            path='imprimir' 
+            element={<Imprimir></Imprimir>}>
           </Route>
           <Route 
             path='editar' 

@@ -1,70 +1,47 @@
-import React, { useState } from "react";
-import Concept from './Concept';
-import realcolorImg from '../Images/Companies/real-color.png';
-import tlineImg from '../Images/Companies/t-line.png';
+import React, { useState } from "react"
+import Concept from './Concept'
 import { refreshTotal } from '../Scripts/math-functions'
+import { getSelectedLogo } from "../Scripts/getSelectedLogo.jsx"
+import { parseDate } from "../Scripts/parseDate.js"
 
-export default function Receipt ({ employee, periodPayment, depositDate, detailsOfPayment, receiptNumber, onConceptChange,}) {
-  
-  const [selectedLogo, setSelectedLogo] = useState(employee.company)
-  const handleLogoChange = () => setSelectedLogo((prevLogo) => (prevLogo === "realcolor" ? "tline" : "realcolor"))
-  
+export default function Receipt ({ 
+  employee, 
+  periodPayment, 
+  depositDate, 
+  detailsOfPayment, 
+  receiptNumber, 
+  onConceptChange,
+}) {
   const [totalRem, setTotalRem] = useState(0)
   const [totalNorem, setTotalNorem] = useState(0)
   const [totalDiscount, setTotalDiscount] = useState(0)
 
-  const handleConceptChange = (docket, concept, value) => {
-    if (concept.includes('rem')) {
+  const admision_date = parseDate(employee.admision_date)
+
+  const handleConceptChange = (concept, value) => {
+    if (concept.includes('REMUNERATIVO')) {
       setTotalRem((prevTotalRem) => refreshTotal(prevTotalRem, value));
-    } else if (concept.includes('norem')) {
+    } 
+    else if (concept.includes('NO REMUNERATIVO')) {
       setTotalNorem((prevTotalNorem) => refreshTotal(prevTotalNorem, value));
-    } else if (concept.includes('discount')) {
+    } 
+    else if (concept.includes('DESCUENTO')) {
       setTotalDiscount((prevTotalDiscount) => refreshTotal(prevTotalDiscount, value));
     }
   }
 
-  const getSelectedLogo = () => {
-    if (selectedLogo === "realcolor") {
-      return (
-        <>
-          <article className="m-auto pt-5">
-            <img src={realcolorImg} width={180} alt="" />
-          </article>
-
-          <article className="m-auto">
-            <p className="flex flex-col gap-y-4">
-              <span className="font-medium text-xs">Real Color S.R.L</span>
-              <span className="font-medium text-xs">Domicilio: NAZCA 3580, 2° P 'A'</span>
-              <span className="font-medium text-xs">C.U.I.T.: 30-71045750-2</span>
-            </p>
-          </article>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <article className="m-auto py-4">
-            <img src={tlineImg} width={180} alt="" />
-          </article>
-
-          <article className=" m-auto">
-            <p className="flex flex-col gap-y-4 py-4">
-              <span className="font-medium text-xs">Technology Line S.R.L</span>
-              <span className="font-medium text-xs">Domicilio: NAZCA 3580, 2° P 'A'</span>
-              <span className="font-medium text-xs">C.U.I.T.: 30-71045750-2</span>
-            </p>
-          </article>
-        </>
-      )
-    }
-  }
-
   const handleInputChange = (concept, value) => {
-    if (concept.includes('rem') || concept.includes('norem') || concept.includes('discount')) {
+    if(
+      concept.includes('rem')   || 
+      concept.includes('norem') || 
+      concept.includes('discount')
+    ) {
       setTotalRem((prevRemTotal) => refreshTotal(prevRemTotal, value))
       onConceptChange(concept, value)
     }
   }
+
+
 
   {/*Body*/}
   return (
@@ -74,7 +51,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
       
       <header className="grid grid-cols-6 border-b-2 border-b-black w-full p-1 min-h-[150px]">
         <section className="grid grid-cols-2 gap-3 col-span-4 h-[100px]">
-        {getSelectedLogo()}
+        {getSelectedLogo(employee.company)}
         </section>
         <section className="flex flex-col justify-around col-span-2 py-4">
           <article className="flex gap-x-4 justify-around w-full">
@@ -104,12 +81,6 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               placeholder="Ej: 10"/>
           </article>
         </section>
-        <button 
-          onClick={handleLogoChange} 
-          type="button"
-          className="w-20 h-8 rounded mx-20 bg-slate-300 hover:bg-slate-400">
-          Cambiar
-        </button>
       </header>
 
     {/*Body: this is divided in 3 parts*/}
@@ -124,7 +95,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="complete-name" 
               type="text"
-              defaultValue={employee.completeName} 
+              defaultValue={employee.full_name} 
               placeholder="Ej: Pepito Thomson"/>
           </li>
           <li className="flex flex-col items-center gap-y-2">
@@ -160,7 +131,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="category" 
               type="text"
-              defaultValue={employee.category} 
+              defaultValue={employee.categoria} 
               placeholder="Ej: A"/>
           </li>
         </ul>
@@ -176,7 +147,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               id="bank" 
               type="text"
               defaultValue={employee.bank} 
-              placeholder="Ej: Pepito Thomson"/>
+              placeholder="Ej: Banco galicia"/>
           </li>
 
           <li className="flex flex-col items-center gap-y-2">
@@ -188,7 +159,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="period" 
               type="text"
-              defaultValue={employee.period} 
+              defaultValue={periodPayment} 
               placeholder="Ej: ..."/>
           </li>
 
@@ -214,7 +185,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="performedTask" 
               type="text"
-              defaultValue={employee.performedTask} 
+              defaultValue={employee.sector} 
               placeholder="Ej: Sistemas"/>
           </li>
 
@@ -227,20 +198,18 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="admisionDate" 
               type="date"
-              defaultValue={employee.admisionDate}/>
+              defaultValue={admision_date}/>
           </li>
 
           <li className="flex flex-col items-center gap-y-2">
-            <label
-              htmlFor="basicRem">
+            <label htmlFor="basicRem">
               Basico
             </label>
             <input 
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="basicRem" 
               type="text"
-              onChange={(e) => handleInputChange('basicRem', parseFloat(e.target.value))}
-              value={employee.basicRem} 
+              defaultValue={employee.basic} 
               placeholder="Ej: 100000"/>
           </li>
         </ul>
@@ -324,7 +293,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               min="0" 
               max="10000000"
               value={totalRem}
-              onChange={handleInputChange}
+              onChange={handleConceptChange}
               disabled/>
             <input 
               className="w-full outline-none rounded text-center py-1 bg-[#D5D8DC]" 
@@ -333,7 +302,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               min="0" 
               max="10000000"
               value={totalNorem}
-              onChange={handleInputChange}
+              onChange={handleConceptChange}
               disabled/>
             <input 
               className="w-full outline-none rounded py-1 text-center bg-[#D5D8DC]" 
@@ -342,7 +311,7 @@ export default function Receipt ({ employee, periodPayment, depositDate, details
               min="0" 
               max="10000000"
               value={totalDiscount}
-              onChange={handleInputChange}
+              onChange={handleConceptChange}
               disabled/>
           </article>
           

@@ -1,26 +1,37 @@
-import React, { useState } from 'react'
-import concepts from '../Json/concepts.json'
+import React, { useEffect, useState } from 'react'
 
 export default function ({ remSalary, noremSalary, discount }) {
-  
+  const [concepts, setConcepts] = useState([])
+  const [totalNet, setTotalNet] = useState(0.00)
+  const [totalToString, setTotalToString] = useState('')
   const [subTotal, setSubTotal] = useState([{
     totalRem: 0.00,
     totalNorem: 0.00,
     discount: 0.00
   }])
 
-  const [totalNet, setTotalNet] = useState(0.00)
-  const [totalToString, setTotalToString] = useState('')
+  
+
+  useEffect(()=>{
+    fetch('https://liquids-api.1.us-1.fl0.io/concepts')
+    .then(response => response.json())
+    .then(data => setConcepts(data))
+    .catch(e => console.error('Error fetching data:', e))
+  },[])
 
   return (
     <ul name="concepts" className="grid grid-cols-6 gap-x-1 px-2">
       <li className="flex items-center gap-y-2 w-full">
         <select name="concepts" className="bg-[#D5D8DC] w-full">
-          <option selected disabled>Elegir</option>
+          <option selected disabled>
+            Elegir
+          </option>
           {concepts.map(concept => (
             <option 
-              key={concept.id} 
-              value={''}>{concept.name}</option>
+              key={concept.id}
+              value={concept.id}>
+              {concept.name}
+            </option>
           ))}
         </select>
       </li>
