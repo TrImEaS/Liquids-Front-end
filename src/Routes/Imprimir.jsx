@@ -7,11 +7,13 @@ export default function Crear () {
   const [employees, setEmployees] = useState([])
   const [legajoInput, setLegajoInput] = useState('')
   const [dniInput, setDniInput] = useState('')
+  const [nameInput, setNameInput] = useState('')
   const [sectors, setSectors] = useState([])
   const [employeeDataIsOpen, setEmployeeDataIsOpen] = useState(true)
   const [variousIsOpen, setVariousIsOpen] = useState(true)
   const [docketIsOpen, setDocketIsOpen] = useState(true)
   const [dniIsOpen, setDniIsOpen] = useState(true)
+  const [nameIsOpen, setNameIsOpen] = useState(true)
   const [someEmployees, setSomeEmployees] = useState([])
   const [filters, setFilters] = useState({
     sector: 'all',
@@ -21,6 +23,8 @@ export default function Crear () {
     depositDate: '',
     periodPayment: getCurrentDateInString(),
     receiptNumber: '',
+    bank: '',
+    basico: 0,
     detailsOfPayment: `Ciudad Autonoma de Buenos Aires ${getCurrentDate()}`
   })
 
@@ -41,12 +45,14 @@ export default function Crear () {
   const handleVariousIsOpen = () => setVariousIsOpen(!variousIsOpen) 
   const handleDocketIsOpen = () => setDocketIsOpen(!docketIsOpen) 
   const handleDniIsOpen = () => setDniIsOpen(!dniIsOpen) 
+  const handleNameIsOpen = () => setNameIsOpen(!nameIsOpen) 
+  const handleNameChange = (e) => setNameInput(e.target.value) 
   const handleLegajoChange = (e) => setLegajoInput(e.target.value)
   const handleDniChange = (e) => setDniInput(e.target.value)
   
   {/*Form various*/}
-  const handleSubmitFilter = (event) => {
-    event.preventDefault()
+  const handleSubmitFilter = (e) => {
+    e.preventDefault()
     
     if (filters.company === 'all' && filters.sector === 'all') {
       // Mostrar todos los empleados si no hay filtros
@@ -78,8 +84,8 @@ export default function Crear () {
   }
   
   {/*Form For docket*/}
-  const handleSubmitDocket = (event) => {
-    event.preventDefault()
+  const handleSubmitDocket = (e) => {
+    e.preventDefault()
 
     const filteredEmployees = employees.filter((employee) => {
       return employee.docket === parseInt(legajoInput)
@@ -89,20 +95,35 @@ export default function Crear () {
   }  
 
   {/*Form For DNI*/}
-  const handleSubmitDni = (event) => {
-    event.preventDefault()
+  const handleSubmitDni = (e) => {
+    e.preventDefault()
 
     const filteredEmployees = employees.filter((employee) => {
       return employee.dni === dniInput
     })
 
     setSomeEmployees(filteredEmployees)
-  }  
- 
+  }
+
+  {/*Form For Name*/}
+  const handleSubmitName = (e) => {
+    e.preventDefault()
+
+    const filteredEmployees = employees.filter((employee) => {
+      const employeeFullName = employee.full_name.toLowerCase()
+      const name = nameInput.toLowerCase()
+  
+      return employeeFullName.includes(name)
+    })
+
+    setSomeEmployees(filteredEmployees)
+  }
+  
+
   return (
     <div className="h-full min-h-screen w-full flex flex-col items-center p-6 gap-y-10">
       {/*Div for Form Divisor*/}
-      <div className="min-w-[400px]">
+      <div className="min-w-[400px] ">
         <div className="flex flex-wrap justify-center items-center flex-col w-full">
           {/*Search by some filters*/}
           <form 
@@ -113,11 +134,11 @@ export default function Crear () {
               onClick={handleVariousIsOpen}>
               {!variousIsOpen ? '⬇' :'⬆'}
             </span>
-            
+            <h1 className="text-xl w-full text-center">
+              Filtros Varios
+            </h1>
+          
             <div className={`${!variousIsOpen ? 'hidden' : 'flex'} w-full flex-col justify-center items-center gap-y-5`}>
-              <h1 className="text-xl pl-5 w-full text-center">
-                Filtros Varios
-              </h1>
 
               <div className="flex gap-5 flex-wrap items-center justify-center">
                 {/*Setting company*/}
@@ -169,6 +190,7 @@ export default function Crear () {
               {/*Submit button*/}
               <article className="flex w-full justify-center items-center">
                 <button 
+                  type="submit"
                   onSubmit={handleSubmitFilter}
                   className="border-black border-2 px-2 py-1 rounded-lg">
                   Buscar
@@ -188,11 +210,11 @@ export default function Crear () {
                 onClick={handleDocketIsOpen}>
                 {!docketIsOpen ? '⬇' :'⬆'}
               </span>
+              <h1 className="text-xl w-full text-center">
+                Buscar por legajo
+              </h1>
 
               <div className={`${!docketIsOpen ? 'hidden' : 'flex'} w-full flex-col justify-center items-center gap-y-5`}>
-                <h1 className="text-xl pl-5 w-full text-center">
-                  Filtrar por legajo
-                </h1>
               
                 <div className="flex flex-col h-[80px] justify-center shadow-sm shadow-white p-2 rounded-lg">
                   <label htmlFor="docketInput">
@@ -223,11 +245,11 @@ export default function Crear () {
                 onClick={handleDniIsOpen}>
                 {!dniIsOpen ? '⬇' :'⬆'}
               </span>
+              <h1 className="text-xl w-full text-center">
+                Buscar por DNI
+              </h1>
               
               <div className={`${!dniIsOpen ? 'hidden' : 'flex'} w-full flex-col justify-center items-center gap-y-5`}>
-                <h1 className="text-xl pl-5 w-full text-center">
-                  Filtros por DNI
-                </h1>
               
                 <div className="flex flex-col h-[80px] justify-center shadow-sm shadow-white p-2 rounded-lg">
                   <label htmlFor="docketInput">
@@ -248,8 +270,41 @@ export default function Crear () {
                 </button>
               </div>
             </form>
+            {/*Search by DNI*/}
+            <form
+              onSubmit={handleSubmitName} 
+              className="flex flex-col gap-y-3 items-center font-semibold border-2 p-5 justify-center w-full relative">
+              <span 
+                className="text-xl font-semibold absolute right-3 top-1 border-2 px-2 rounded-full cursor-pointer hover:bg-white hover:text-black duration-300"
+                onClick={handleNameIsOpen}>
+                {!nameIsOpen ? '⬇' :'⬆'}
+              </span>
+              <h1 className="text-xl w-full text-center">
+                Buscar por Nombre
+              </h1>
+              
+              <div className={`${!nameIsOpen ? 'hidden' : 'flex'} w-full flex-col justify-center items-center gap-y-5`}>
+              
+                <div className="flex flex-col h-[80px] justify-center shadow-sm shadow-white p-2 rounded-lg">
+                  <label htmlFor="docketInput">
+                    Ingresar Nombre:
+                  </label>
+                  <input
+                    type="type"
+                    id="docketInput"
+                    className="rounded-lg px-2 py-1 text-black"
+                    value={nameInput}
+                    onChange={handleNameChange}
+                  />
+                </div>
+                <button 
+                  type="submit"
+                  className="border-black border-2 px-2 py-1 rounded-lg">
+                  Buscar
+                </button>
+              </div>
+            </form>
           </div> 
-
         </div>
 
         {/*Setting data for all called employees*/}
@@ -260,22 +315,64 @@ export default function Crear () {
             onClick={handleEmployeeDataIsOpen}>
             {!employeeDataIsOpen ? '⬇' :'⬆'}
           </span>
+          <h1 className="text-xl pl-5 w-full text-center font-semibold">
+            Aplicar para todos
+          </h1>
           
-          <div className={`${!employeeDataIsOpen ? 'hidden' : 'flex'} w-full flex-col justify-center items-center gap-y-5`}>
-            <label 
-              htmlFor="select-deposit-date" 
-              className="cursor-pointer text-xl w-full pl-5 text-center">
-              Ingrese Fecha de pago para todos: 
-            </label>
-            <input 
-              className="text-black w-[200px] text-center text-lg font-semibold outline-none rounded-lg p-2 cursor-pointer border-2 border-black" 
-              id="select-deposit-date" 
-              type="date"
-              value={receiptData.depositDate}
-              onChange={(e) => setReceiptData(prevData => ({...prevData, depositDate: e.target.value}))}
+          <section className={`${!employeeDataIsOpen ? 'hidden' : 'flex'} w-full flex-wrap justify-center items-center gap-5`}>
+            <article className="flex flex-col items-center justify-center">
+              <label 
+                htmlFor="select-deposit-date" 
+                className="cursor-pointer font-semibold w-full pl-2">
+                Fecha de pagos: 
+              </label>
+              <input 
+                className="text-black w-[200px] text-center text-lg font-semibold outline-none rounded-lg p-2 cursor-pointer border-2 border-black" 
+                id="select-deposit-date" 
+                type="date"
+                value={receiptData.depositDate}
+                onChange={(e) => setReceiptData(prevData => ({...prevData, depositDate: e.target.value}))}
               />
-          </div>
+            </article>
+              
+            <article className="flex flex-col items-center justify-center">
+              <label 
+                htmlFor="select-deposit-date" 
+                className="cursor-pointer font-semibold w-full pl-2">
+                Banco:
+              </label>
+              <input 
+                className="text-black w-[200px] text-lg font-semibold outline-none rounded-lg p-2 border-2 border-black" 
+                id="select-deposit-date" 
+                type="text"
+                value={receiptData.bank}
+                onChange={(e) => setReceiptData(prevData => ({...prevData, bank: e.target.value}))}
+              />
+            </article>
+
+            <article className="flex flex-col items-center justify-center">
+              <label 
+                htmlFor="select-deposit-date" 
+                className="cursor-pointer font-semibold w-full pl-2">
+                Basico:
+              </label>
+              <input 
+                className="text-black w-[200px] text-lg font-semibold outline-none rounded-lg p-2 border-2 border-black" 
+                id="select-deposit-date" 
+                type="number"
+                value={receiptData.basic}
+                onChange={(e) => setReceiptData(prevData => ({...prevData, basic: e.target.value}))}
+              />
+            </article>
+          </section>
         </article>
+
+        {/*Reload page btn*/}
+        <button
+          onClick={() => window.location.reload()}
+          className="border-2 px-2 py-1 text-xl font-bold hover:bg-slate-400 duration-300">
+          Reset
+        </button>
       </div>
       
       <section className="w-full flex flex-col justify-center items-center">
@@ -284,7 +381,7 @@ export default function Crear () {
           {someEmployees.map(employee => (
             <div 
               className="flex flex-col items-center gap-y-5 rounded-md bg-slate-400 border-2 border-black box-border"
-              key={employee.docket}
+              key={employee.id + 1}
             >  
               <h1 className="text-2xl mt-4 text-black">
                 {employee.completeName}
@@ -296,6 +393,8 @@ export default function Crear () {
                 depositDate={receiptData.depositDate} 
                 detailsOfPayment={receiptData.detailsOfPayment}
                 receiptNumber={receiptData.receiptNumber}
+                bank={receiptData.bank}
+                basic={receiptData.basic}
               ></Receipt>
            </div>
           ))}

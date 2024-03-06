@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import conceptsJson from '../Json/concepts.json'
 
 export default function ({ remSalary, noremSalary, discount }) {
   const [concepts, setConcepts] = useState([])
@@ -13,10 +14,11 @@ export default function ({ remSalary, noremSalary, discount }) {
   
 
   useEffect(()=>{
-    fetch('https://liquids-api.1.us-1.fl0.io/concepts')
-    .then(response => response.json())
-    .then(data => setConcepts(data))
-    .catch(e => console.error('Error fetching data:', e))
+    // fetch('https://liquids-api.1.us-1.fl0.io/concepts')
+    // .then(response => response.json())
+    // .then(data => setConcepts(data))
+    // .catch(e => console.error('Error fetching data:', e))
+    setConcepts(conceptsJson)
   },[])
 
   return (

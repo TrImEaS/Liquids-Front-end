@@ -11,10 +11,20 @@ export default function Receipt ({
   detailsOfPayment, 
   receiptNumber, 
   onConceptChange,
+  bank,
+  basic
 }) {
   const [totalRem, setTotalRem] = useState(0)
   const [totalNorem, setTotalNorem] = useState(0)
   const [totalDiscount, setTotalDiscount] = useState(0)
+  const [employeeData, setEmployeeData] = useState({
+    deposit_date: '',
+    period_payment: '',
+    receipt_number: '',
+    employee_bank: '',
+    employee_basic: 0,
+    details_of_payment: ''
+  })
 
   const admision_date = parseDate(employee.admision_date)
 
@@ -146,7 +156,7 @@ export default function Receipt ({
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="bank" 
               type="text"
-              defaultValue={employee.bank} 
+              defaultValue={bank} 
               placeholder="Ej: Banco galicia"/>
           </li>
 
@@ -159,7 +169,7 @@ export default function Receipt ({
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="period" 
               type="text"
-              defaultValue={periodPayment} 
+              defaultValue={periodPayment}
               placeholder="Ej: ..."/>
           </li>
 
@@ -209,7 +219,7 @@ export default function Receipt ({
               className="w-full outline-none rounded py-1 pl-3 bg-[#D5D8DC]" 
               id="basicRem" 
               type="text"
-              defaultValue={employee.basic} 
+              defaultValue={basic} 
               placeholder="Ej: 100000"/>
           </li>
         </ul>
@@ -278,6 +288,11 @@ export default function Receipt ({
     
     {/*Footer/Totals*/}
       <footer className="flex justify-end">
+        <section className="flex pl-10 items-center w-full">
+          <button type="button" className="border border-black py-3 px-4 font-bold text-lg rounded-lg hover:bg-[#444] hover:text-white duration-300">
+            Imprimir
+          </button>
+        </section>
         <section className="w-[250px] grid grid-rows-3 gap-y-2">
 
           {/*SubTotal*/}
@@ -332,7 +347,7 @@ export default function Receipt ({
               disabled/>
           </article>
 
-          {/*Total Neto*/}
+          {/*Total Neto string*/}
           <article className="flex gap-3">
           <span 
             className="flex items-center justify-center">

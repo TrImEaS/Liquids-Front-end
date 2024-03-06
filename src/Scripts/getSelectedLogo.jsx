@@ -25,7 +25,7 @@ export function getSelectedLogo (company) {
   
   if(
       company === 'Tline' ||
-      company === 'Tehcnologyline' ||
+      company === 'Technologyline' ||
       company === 'Linetechnology'
     ) {
     return (
