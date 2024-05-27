@@ -1,5 +1,5 @@
-import React, { useState } from "react"
 import Concept from './Concept'
+import { useState } from "react"
 import { refreshTotal } from '../Scripts/math-functions'
 import { getSelectedLogo } from "../Scripts/getSelectedLogo.jsx"
 import { parseDate } from "../Scripts/parseDate.js"
@@ -10,7 +10,6 @@ export default function Receipt ({
   depositDate, 
   detailsOfPayment, 
   receiptNumber, 
-  onConceptChange,
   bank,
   basic
 }) {
@@ -40,20 +39,7 @@ export default function Receipt ({
     }
   }
 
-  const handleInputChange = (concept, value) => {
-    if(
-      concept.includes('rem')   || 
-      concept.includes('norem') || 
-      concept.includes('discount')
-    ) {
-      setTotalRem((prevRemTotal) => refreshTotal(prevRemTotal, value))
-      onConceptChange(concept, value)
-    }
-  }
 
-
-
-  {/*Body*/}
   return (
     <form 
       name="receipt-container" 
@@ -282,7 +268,7 @@ export default function Receipt ({
 
         {/*Concepts*/}
         <div className="min-h-[200px]">
-          <Concept concept={"Basico"} docket={employee.docket} remValue={employee.remValue}></Concept>
+          <Concept concept={"Basico"} remSalary={10000}></Concept>
         </div>
       </section>
     

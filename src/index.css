@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 nav .isActive {
-  color: #67EEF9 !important
+  color: #67EEF9 !important;
+  border-bottom: solid 4px #67EEF9;
 }

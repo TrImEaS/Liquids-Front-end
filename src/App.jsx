@@ -1,27 +1,11 @@
-import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
-import { Home, Error, Ver, Imprimir, Editar } from './Routes/Routes'
+import { Home, Error, Ver, Imprimir, Preparar } from './Routes/Routes'
 import Nav from './Components/Nav'
-import './App.css'
 
 function App() {
-
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const setTheme = (darkModeOn) => {
-      document.documentElement.classList.toggle('dark', darkModeOn)
-      localStorage.setItem('theme', darkModeOn ? 'dark' : 'light')
-    }
-    setTheme(darkModeMediaQuery.matches)
-    darkModeMediaQuery.addEventListener('change', (e) => {
-      setTheme(e.matches);
-    })
-    
-  }, []);
-
   return (
-      <main className='flex flex-col items-center bg-slate-100 dark:bg-slate-900
-        text-black font-mono dark:text-slate-50 min-h-screen font-extralight min-w-[390px]'>
+      <main className='flex flex-col items-center bg-slate-900
+      font-mono text-slate-50 min-h-screen font-extralight min-w-[390px]'>
         <Nav></Nav>
         <Routes>
           <Route 
@@ -38,7 +22,7 @@ function App() {
           </Route>
           <Route 
             path='editar' 
-            element={<Editar></Editar>}>
+            element={<Preparar></Preparar>}>
           </Route>
           <Route 
             path='*' 
